@@ -42,7 +42,7 @@ namespace AEV7_David_Alberto
                 frMantenimiento.Activate();
             }
 
-            MessageBox.Show();
+            
         }
 
         private void mtbdni_TextChanged(object sender, EventArgs e)
