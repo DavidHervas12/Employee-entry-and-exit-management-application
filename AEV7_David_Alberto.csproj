@@ -50,6 +50,12 @@
     <Compile Include="Clases\ConexionBD.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Fichaje.cs" />
+    <Compile Include="FrmClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClave.Designer.cs">
+      <DependentUpon>FrmClave.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmClave.resx">
+      <DependentUpon>FrmClave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMantenimiento.resx">
       <DependentUpon>FrmMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
