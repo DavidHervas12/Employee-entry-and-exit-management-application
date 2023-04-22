@@ -29,5 +29,15 @@ namespace AEV7_David_Alberto
             timReloj.Enabled = true;
             timReloj.Interval = 1000;
         }
+
+        private void btnMantenimiento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtbdni_TextChanged(object sender, EventArgs e)
+        {
+            mtbdni.Text = mtbdni.Text.ToUpper();
+        }
     }
 }
