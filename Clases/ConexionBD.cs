@@ -25,7 +25,7 @@ namespace AEV7_David_Alberto.Clases
                     if(instancia == null)
                     {
                         instancia = new MySqlConnection();
-                        instancia.ConnectionString = "sever=127.0.0.1;database=BDFichajes;uid=root;pwd=";
+                        instancia.ConnectionString = "server=127.0.0.1;database=BDFichajes;uid=root;pwd=";
                     }
                     return instancia;
                 }

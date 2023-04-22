@@ -46,9 +46,10 @@ namespace AEV7_David_Alberto
             // btnEntrada
             // 
             this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrada.Location = new System.Drawing.Point(789, 177);
+            this.btnEntrada.Location = new System.Drawing.Point(592, 144);
+            this.btnEntrada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(219, 54);
+            this.btnEntrada.Size = new System.Drawing.Size(164, 44);
             this.btnEntrada.TabIndex = 0;
             this.btnEntrada.Text = "Entrada";
             this.btnEntrada.UseVisualStyleBackColor = true;
@@ -56,9 +57,10 @@ namespace AEV7_David_Alberto
             // btnSalida
             // 
             this.btnSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalida.Location = new System.Drawing.Point(789, 258);
+            this.btnSalida.Location = new System.Drawing.Point(592, 210);
+            this.btnSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalida.Name = "btnSalida";
-            this.btnSalida.Size = new System.Drawing.Size(219, 54);
+            this.btnSalida.Size = new System.Drawing.Size(164, 44);
             this.btnSalida.TabIndex = 1;
             this.btnSalida.Text = "Salida";
             this.btnSalida.UseVisualStyleBackColor = true;
@@ -66,9 +68,10 @@ namespace AEV7_David_Alberto
             // btnPresencia
             // 
             this.btnPresencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPresencia.Location = new System.Drawing.Point(789, 336);
+            this.btnPresencia.Location = new System.Drawing.Point(592, 273);
+            this.btnPresencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPresencia.Name = "btnPresencia";
-            this.btnPresencia.Size = new System.Drawing.Size(219, 54);
+            this.btnPresencia.Size = new System.Drawing.Size(164, 44);
             this.btnPresencia.TabIndex = 2;
             this.btnPresencia.Text = "Presencia";
             this.btnPresencia.UseVisualStyleBackColor = true;
@@ -76,9 +79,10 @@ namespace AEV7_David_Alberto
             // btnPermanencia
             // 
             this.btnPermanencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPermanencia.Location = new System.Drawing.Point(789, 416);
+            this.btnPermanencia.Location = new System.Drawing.Point(592, 338);
+            this.btnPermanencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPermanencia.Name = "btnPermanencia";
-            this.btnPermanencia.Size = new System.Drawing.Size(219, 54);
+            this.btnPermanencia.Size = new System.Drawing.Size(164, 44);
             this.btnPermanencia.TabIndex = 3;
             this.btnPermanencia.Text = "Permanencia";
             this.btnPermanencia.UseVisualStyleBackColor = true;
@@ -86,9 +90,10 @@ namespace AEV7_David_Alberto
             // btnMantenimiento
             // 
             this.btnMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMantenimiento.Location = new System.Drawing.Point(789, 494);
+            this.btnMantenimiento.Location = new System.Drawing.Point(585, 403);
+            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMantenimiento.Name = "btnMantenimiento";
-            this.btnMantenimiento.Size = new System.Drawing.Size(219, 54);
+            this.btnMantenimiento.Size = new System.Drawing.Size(184, 44);
             this.btnMantenimiento.TabIndex = 4;
             this.btnMantenimiento.Text = "Mantenimiento";
             this.btnMantenimiento.UseVisualStyleBackColor = true;
@@ -101,10 +106,11 @@ namespace AEV7_David_Alberto
             // mtbdni
             // 
             this.mtbdni.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbdni.Location = new System.Drawing.Point(89, 53);
+            this.mtbdni.Location = new System.Drawing.Point(67, 43);
+            this.mtbdni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtbdni.Mask = "00000000-L";
             this.mtbdni.Name = "mtbdni";
-            this.mtbdni.Size = new System.Drawing.Size(500, 98);
+            this.mtbdni.Size = new System.Drawing.Size(376, 80);
             this.mtbdni.TabIndex = 8;
             this.mtbdni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbdni.TextChanged += new System.EventHandler(this.mtbdni_TextChanged);
@@ -114,9 +120,10 @@ namespace AEV7_David_Alberto
             this.pnlSeccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlSeccion.Controls.Add(this.lblReloj);
             this.pnlSeccion.Controls.Add(this.lblFecha);
-            this.pnlSeccion.Location = new System.Drawing.Point(747, 24);
+            this.pnlSeccion.Location = new System.Drawing.Point(560, 20);
+            this.pnlSeccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlSeccion.Name = "pnlSeccion";
-            this.pnlSeccion.Size = new System.Drawing.Size(279, 127);
+            this.pnlSeccion.Size = new System.Drawing.Size(209, 103);
             this.pnlSeccion.TabIndex = 9;
             // 
             // lblReloj
@@ -124,9 +131,10 @@ namespace AEV7_David_Alberto
             this.lblReloj.AutoSize = true;
             this.lblReloj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblReloj.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReloj.Location = new System.Drawing.Point(84, 70);
+            this.lblReloj.Location = new System.Drawing.Point(63, 57);
+            this.lblReloj.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReloj.Name = "lblReloj";
-            this.lblReloj.Size = new System.Drawing.Size(93, 38);
+            this.lblReloj.Size = new System.Drawing.Size(73, 29);
             this.lblReloj.TabIndex = 10;
             this.lblReloj.Text = "Reloj";
             // 
@@ -135,18 +143,19 @@ namespace AEV7_David_Alberto
             this.lblFecha.AutoSize = true;
             this.lblFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(102, 14);
+            this.lblFecha.Location = new System.Drawing.Point(76, 11);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(94, 32);
+            this.lblFecha.Size = new System.Drawing.Size(72, 26);
             this.lblFecha.TabIndex = 11;
             this.lblFecha.Text = "Fecha";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 601);
+            this.ClientSize = new System.Drawing.Size(818, 488);
             this.Controls.Add(this.pnlSeccion);
             this.Controls.Add(this.mtbdni);
             this.Controls.Add(this.btnMantenimiento);
@@ -154,7 +163,9 @@ namespace AEV7_David_Alberto
             this.Controls.Add(this.btnPresencia);
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnEntrada);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrada";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.pnlSeccion.ResumeLayout(false);

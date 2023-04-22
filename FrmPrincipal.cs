@@ -12,6 +12,8 @@ namespace AEV7_David_Alberto
 {
     public partial class FrmPrincipal : Form
     {
+        FrmMantenimiento frmantenimiento;
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -32,7 +34,15 @@ namespace AEV7_David_Alberto
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-
+            if (frmantenimiento == null)
+            {
+                frmantenimiento = new FrmMantenimiento();
+                frmantenimiento.Show();
+            }
+            else
+            {
+                frmantenimiento.Activate();
+            }
         }
 
         private void mtbdni_TextChanged(object sender, EventArgs e)
