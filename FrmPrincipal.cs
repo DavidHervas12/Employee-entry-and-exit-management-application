@@ -41,7 +41,6 @@ namespace AEV7_David_Alberto
             {
                 frMantenimiento.Activate();
             }
-
             
         }
 
