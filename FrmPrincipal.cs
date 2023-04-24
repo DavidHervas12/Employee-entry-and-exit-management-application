@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AEV7_David_Alberto.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,14 +35,28 @@ namespace AEV7_David_Alberto
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-            frmClave = new FrmClave();
-            frmClave.Show();
-            string dni = mtbDni.Text.Substring(0,8) + mtbDni.Text[9];
-
-            if (frmClave != null)
+            if (ConexionBD.Conexion != null)
             {
-                frmClave.Activate();
+                ConexionBD.AbrirConexion();
+                if (Empleado.ComprobarAdministrador(mtbDni))
+                {
+                    frmClave = new FrmClave();
+                    frmClave.Show();
+
+                    if (frmClave != null)
+                    {
+                        frmClave.Activate();
+                    }
+                }
+
+                ConexionBD.CerrarConexion();
             }
+            else
+            {
+                MessageBox.Show("No existe conexión a la Base de datos");
+            }
+
+
         }
 
         private void mtbdni_TextChanged(object sender, EventArgs e)

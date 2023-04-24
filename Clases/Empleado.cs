@@ -113,6 +113,38 @@ namespace AEV7_David_Alberto.Clases
             }
         }
 
+        public static bool ComprobarAdministrador(MaskedTextBox dni)
+        {
+            string nif = dni.Text.Substring(0, 8) + dni.Text[9];
+
+            string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("nif", dni.Text);
+            MySqlDataReader reader = comando.ExecuteReader();
+            bool existe = false;
+
+            if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+            {
+                existe = reader.GetBoolean(3);
+                reader.Close();
+                if (existe)
+                {
+                    return existe;
+                }
+                else
+                {
+                    MessageBox.Show("Ese usuario no es administrador");
+                    return existe;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay ningún empleado con este dni");
+                reader.Close();
+                return existe;
+            }
+        }
+
         public static bool ValidaNif(TextBox dni)
         {
             string letras = "TRWAGMYFPDXBNJZSQVHLCKE";

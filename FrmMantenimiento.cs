@@ -14,6 +14,7 @@ namespace AEV7_David_Alberto
 {
     public partial class FrmMantenimiento : Form
     {
+        #region Eventos
         public FrmMantenimiento()
         {
             InitializeComponent();
@@ -74,6 +75,47 @@ namespace AEV7_David_Alberto
             }
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int resultado = 0;
+
+            try
+            {
+                if (ConexionBD.Conexion != null)
+                {
+
+                    DialogResult confirmacion = MessageBox.Show("Borrado de registro seleccionado. ¿Continuar?",
+                                                "Eliminación", MessageBoxButtons.YesNo);
+
+                    if (confirmacion == DialogResult.Yes)
+                    {
+                        if (ConexionBD.Conexion != null)
+                        {
+                            ConexionBD.AbrirConexion();
+                            resultado = Empleado.EliminaEmpleado(txtNIF);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                        }
+                        // Cierro la conexión
+                        ConexionBD.CerrarConexion();
+                        CargaListaEmpleados();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
+            }
+
+
+        }
+        #endregion
         private void CargaListaEmpleados()
         {
             string seleccion = "Select * from empleados";
@@ -116,45 +158,6 @@ namespace AEV7_David_Alberto
             txtContrasenya.Clear();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int resultado = 0;
 
-            try
-            {
-                if (ConexionBD.Conexion != null)
-                {
-
-                    DialogResult confirmacion = MessageBox.Show("Borrado de registro seleccionado. ¿Continuar?",
-                                                "Eliminación", MessageBoxButtons.YesNo);
-
-                    if (confirmacion == DialogResult.Yes)
-                    {
-                        if (ConexionBD.Conexion != null)
-                        {
-                            ConexionBD.AbrirConexion();
-                            resultado = Empleado.EliminaEmpleado(txtNIF);
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
-                        }
-                        // Cierro la conexión
-                        ConexionBD.CerrarConexion();
-                        CargaListaEmpleados();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-            }
-            finally
-            {
-                ConexionBD.CerrarConexion();
-            }
-
-
-        }
     }
 }
