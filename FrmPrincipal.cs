@@ -12,7 +12,7 @@ namespace AEV7_David_Alberto
 {
     public partial class FrmPrincipal : Form
     {
-        FrmMantenimiento frMantenimiento;
+        FrmClave frmClave;
 
         public FrmPrincipal()
         {
@@ -34,19 +34,19 @@ namespace AEV7_David_Alberto
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-            frMantenimiento = new FrmMantenimiento();
-            frMantenimiento.Show();
+            frmClave = new FrmClave();
+            frmClave.Show();
+            string dni = mtbDni.Text.Substring(0,8) + mtbDni.Text[9];
 
-            if (frMantenimiento!=null)
+            if (frmClave != null)
             {
-                frMantenimiento.Activate();
+                frmClave.Activate();
             }
-            
         }
 
         private void mtbdni_TextChanged(object sender, EventArgs e)
         {
-            mtbdni.Text = mtbdni.Text.ToUpper();
+            mtbDni.Text = mtbDni.Text.ToUpper();
         }
     }
 }
