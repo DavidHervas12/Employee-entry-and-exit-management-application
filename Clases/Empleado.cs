@@ -119,29 +119,29 @@ namespace AEV7_David_Alberto.Clases
 
             string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
-            comando.Parameters.AddWithValue("nif", dni.Text);
+            comando.Parameters.AddWithValue("nif", nif);
             MySqlDataReader reader = comando.ExecuteReader();
-            bool existe = false;
+            bool esAdmin = false;
 
-            if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+            if (reader.Read() && reader.HasRows)
             {
-                existe = reader.GetBoolean(3);
+                esAdmin = reader.GetBoolean(3);
                 reader.Close();
-                if (existe)
+                if (esAdmin)
                 {
-                    return existe;
+                    return esAdmin;
                 }
                 else
                 {
                     MessageBox.Show("Ese usuario no es administrador");
-                    return existe;
+                    return esAdmin;
                 }
             }
             else
             {
                 MessageBox.Show("No hay ningún empleado con este dni");
                 reader.Close();
-                return existe;
+                return esAdmin;
             }
         }
 
