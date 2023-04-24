@@ -96,13 +96,13 @@ namespace AEV7_David_Alberto
             bool ok = true;
             if (!Empleado.ValidaNif(dni))
             {
-                errorProv.SetError(dni, "El dni no es válido");
                 ok = false;
+                errorProv.SetError(dni, "El dni no es válido");
             }
             if (!Empleado.ComprobarEmpleado(dni))
             {
-                errorProv.SetError(dni, "El empleado ya está en la base de datos");
                 ok = false;
+                errorProv.SetError(dni, "El DNI del empleado introducido ya existe");
             }
 
             return ok;
@@ -114,6 +114,47 @@ namespace AEV7_David_Alberto
         {
             txtContrasenya.Enabled = chkAdministrador.Checked;
             txtContrasenya.Clear();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int resultado = 0;
+
+            try
+            {
+                if (ConexionBD.Conexion != null)
+                {
+
+                    DialogResult confirmacion = MessageBox.Show("Borrado de registro seleccionado. ¿Continuar?",
+                                                "Eliminación", MessageBoxButtons.YesNo);
+
+                    if (confirmacion == DialogResult.Yes)
+                    {
+                        if (ConexionBD.Conexion != null)
+                        {
+                            ConexionBD.AbrirConexion();
+                            resultado = Empleado.EliminaEmpleado(txtNIF);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                        }
+                        // Cierro la conexión
+                        ConexionBD.CerrarConexion();
+                        CargaListaEmpleados();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
+            }
+
+
         }
     }
 }
