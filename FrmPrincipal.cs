@@ -15,6 +15,9 @@ namespace AEV7_David_Alberto
     {
         FrmClave frmClave;
 
+        private static string nif; //Hago un atributo nif para comunicarme con otro formulario
+        public static string NIF { get { return nif; } set { nif = value; } }
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -55,8 +58,6 @@ namespace AEV7_David_Alberto
             {
                 MessageBox.Show("No existe conexión a la Base de datos");
             }
-
-
         }
 
         private void mtbdni_TextChanged(object sender, EventArgs e)

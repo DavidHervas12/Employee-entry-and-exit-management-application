@@ -39,8 +39,7 @@ namespace AEV7_David_Alberto
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
-                    
-
+                   
                     if (ValidaNifErrorProv(txtNIF))
                     {
                         Empleado emp = new Empleado(txtNIF.Text, txtNombre.Text, txtApellidos.Text,
@@ -149,7 +148,6 @@ namespace AEV7_David_Alberto
 
             return ok;
         }
-
         #endregion
 
         private void chkAdministrador_CheckedChanged(object sender, EventArgs e)

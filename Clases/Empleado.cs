@@ -116,6 +116,7 @@ namespace AEV7_David_Alberto.Clases
         public static bool ComprobarAdministrador(MaskedTextBox dni)
         {
             string nif = dni.Text.Substring(0, 8) + dni.Text[9];
+            FrmPrincipal.NIF = nif;
 
             string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -141,10 +142,31 @@ namespace AEV7_David_Alberto.Clases
             {
                 MessageBox.Show("No hay ningún empleado con este dni");
                 reader.Close();
-                return esAdmin;
+                return esAdmin; //Estara falso por lo tanto no recibirá nada
             }
         }
 
+        public static bool ComprobarClave(TextBox clave)
+        {
+            string consulta = String.Format("SELECT * FROM empleados WHERE nif=@nif AND clave=@clave");
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("nif", FrmPrincipal.NIF);
+            comando.Parameters.AddWithValue("clave", clave.Text);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                reader.Close();
+                return true;
+            }
+            else
+            {
+                reader.Close();
+                return false;
+            }
+        }
+        
+        
         public static bool ValidaNif(TextBox dni)
         {
             string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
