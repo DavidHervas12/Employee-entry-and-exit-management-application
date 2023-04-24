@@ -29,26 +29,28 @@ namespace AEV7_David_Alberto.Clases
             nombre = nom;
             apellidos = ape;
             administrador = admin;
-            contrasenya = clave;
+            if(admin) contrasenya = clave;
+            else contrasenya = null;
         }
 
         public Empleado()
         {
         }
 
-        /// <summary>
-        /// Agrega un empleado a la lista de empleados
-        /// </summary>
-        /// <param name="conexion"></param>
-        /// <param name="emp"></param>
-        /// <returns></returns>
+        //Método para agregar empleados
         public int AgregarEmpleado(Empleado emp)
         {
             int retorno;
-            string consulta = String.Format("INSERT INTO empleados (nif,nombre,apellidos,admin,clave) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}')", emp.nif, emp.nombre, emp.apellidos, emp.administrador, emp.contrasenya);
+            string consulta = String.Format("INSERT INTO empleados (nif,nombre,apellidos,admin,clave) " +
+                "VALUES (@nif,@nom,@ape,@admin,@clave)");
 
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+
+            comando.Parameters.AddWithValue("nif", emp.nif);
+            comando.Parameters.AddWithValue("nom", emp.nombre);
+            comando.Parameters.AddWithValue("ape", emp.apellidos);
+            comando.Parameters.AddWithValue("admin", emp.administrador);
+            comando.Parameters.AddWithValue("clave", emp.contrasenya);
             retorno = comando.ExecuteNonQuery(); 
 
             return retorno;
@@ -66,31 +68,59 @@ namespace AEV7_David_Alberto.Clases
                 // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                 while (reader.Read())
                 {
-                    Empleado empl = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                         reader.GetBoolean(3), reader.GetString(4));
-                    listaEmpleados.Add(empl);
+                    Empleado emp = new Empleado();
+                    emp.nif = reader.GetString(0);
+                    emp.nombre = reader.GetString(1);
+                    emp.apellidos = reader.GetString(2);
+                    emp.administrador = reader.GetBoolean(3);
+                    emp.contrasenya = reader.GetString(4);
+
+                    listaEmpleados.Add(emp);
                 }
             }
             // devolvemos la lista cargada con los usuarios.
             return listaEmpleados;
         }
 
-        public static bool ComprobarEmpleado(Empleado emp)
+
+
+        #region Validaciones
+        public static bool ComprobarEmpleado(TextBox dni)
         {
-            string consulta = string.Format("SELECT * FROM empleados WHERE nif='{0}'", emp.nif);
+            string consulta = string.Format("SELECT * FROM empleados WHERE nif='{0}'", dni.Text);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
             {
                 reader.Close();
-                return true;
+                return false;
             }
             else
             {
                 reader.Close();
-                return false;
+                return true;
             }
         }
+
+        public static bool ValidaNif(TextBox dni)
+        {
+            string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            int resto;
+            string letraCorrecta;
+
+
+            int num = int.Parse(dni.Text.Substring(0, 7));
+            string letraDato = dni.Text.Substring(8);
+
+            resto = num % 23;
+            letraCorrecta = letras[resto].ToString();
+
+            if (letraDato == letraCorrecta) return true;
+            return false;
+        }
+
+
+        #endregion
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,24 +19,14 @@ namespace AEV7_David_Alberto
             InitializeComponent();
         }
 
+        private void FrmMantenimiento_Load(object sender, EventArgs e)
+        {
+            CargaListaEmpleados(); //Cargamos la lista de empleados cuando abrimos el formulario
+        }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void CargaListaEmpleados()
-        {
-            string seleccion = "Select * from empleados";
-            if (ConexionBD.Conexion != null)
-            {
-                ConexionBD.AbrirConexion();
-                dgvEmpleados.DataSource = Empleado.BuscarEmpleado(seleccion);
-                ConexionBD.CerrarConexion();
-            }
-            else
-            {
-                MessageBox.Show("No existe conexión a la Base de datos");
-            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -47,21 +38,14 @@ namespace AEV7_David_Alberto
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
-                    Empleado emp = new Empleado();
-                    emp.Nif = txtNIF.Text;
-                    emp.Nombre = txtNombre.Text;
-                    emp.Apellidos = txtApellidos.Text;
-                    emp.Administrador = chkAdministrador.Checked;
-                    emp.Contrasenya = txtContrasenya.Text;
+                    
 
-                    if (Empleado.ComprobarEmpleado(emp))
+                    if (ValidaNifErrorProv(txtNIF))
                     {
-                        MessageBox.Show("El NIF del empleado introducido ya existe");
-                    } 
-                    else
-                    {
+                        Empleado emp = new Empleado(txtNIF.Text, txtNombre.Text, txtApellidos.Text,
+                        chkAdministrador.Checked, txtContrasenya.Text);
                         resultado = emp.AgregarEmpleado(emp);
-                    }
+                    } 
 
                     if (resultado > 0)
                     {
@@ -72,7 +56,6 @@ namespace AEV7_David_Alberto
                         txtContrasenya.Clear();
                     }
 
-                    // Cerramos la conexion a la base de datos
                     ConexionBD.CerrarConexion();
                     CargaListaEmpleados();
                 }
@@ -91,9 +74,46 @@ namespace AEV7_David_Alberto
             }
         }
 
-        private void FrmMantenimiento_Load(object sender, EventArgs e)
+        private void CargaListaEmpleados()
         {
-            CargaListaEmpleados(); //Cargamos la lista de empleados cuando abrimos el formulario
+            string seleccion = "Select * from empleados";
+            if (ConexionBD.Conexion != null)
+            {
+                ConexionBD.AbrirConexion();
+                dgvEmpleados.DataSource = Empleado.BuscarEmpleado(seleccion);
+                ConexionBD.CerrarConexion();
+            }
+            else
+            {
+                MessageBox.Show("No existe conexión a la Base de datos");
+            }
+        }
+
+        #region Validaciones
+
+        private bool ValidaNifErrorProv(TextBox dni)
+        {
+            bool ok = true;
+            if (!Empleado.ValidaNif(dni))
+            {
+                errorProv.SetError(dni, "El dni no es válido");
+                ok = false;
+            }
+            if (!Empleado.ComprobarEmpleado(dni))
+            {
+                errorProv.SetError(dni, "El empleado ya está en la base de datos");
+                ok = false;
+            }
+
+            return ok;
+        }
+
+        #endregion
+
+        private void chkAdministrador_CheckedChanged(object sender, EventArgs e)
+        {
+            txtContrasenya.Enabled = chkAdministrador.Checked;
+            txtContrasenya.Clear();
         }
     }
 }
