@@ -29,7 +29,8 @@ namespace AEV7_David_Alberto.Clases
             nombre = nom;
             apellidos = ape;
             administrador = admin;
-            contrasenya = clave;
+            if (admin) contrasenya = clave;
+            contrasenya = "";
         }
 
         public Empleado()
@@ -109,8 +110,8 @@ namespace AEV7_David_Alberto.Clases
             string letraCorrecta;
 
 
-            int num = int.Parse(dni.Text.Substring(0, 7));
-            string letraDato = dni.Text.Substring(8);
+            int num = int.Parse(dni.Text.Substring(0, 8));
+            string letraDato = dni.Text[8].ToString();
 
             resto = num % 23;
             letraCorrecta = letras[resto].ToString();
