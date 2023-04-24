@@ -82,13 +82,23 @@ namespace AEV7_David_Alberto.Clases
             return listaEmpleados;
         }
 
+        public static int EliminaEmpleado(TextBox nif)
+        {
+            int retorno;
+            string consulta = string.Format("DELETE FROM empleados WHERE nif=@nif");
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("nif", nif.Text);
+            retorno = comando.ExecuteNonQuery();
 
+            return retorno;
+        }
 
         #region Validaciones
         public static bool ComprobarEmpleado(TextBox dni)
         {
-            string consulta = string.Format("SELECT * FROM empleados WHERE nif='{0}'", dni.Text);
+            string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("nif", dni.Text);
             MySqlDataReader reader = comando.ExecuteReader();
 
             if (reader.HasRows)   // En caso que se hayan registros en el objeto reader

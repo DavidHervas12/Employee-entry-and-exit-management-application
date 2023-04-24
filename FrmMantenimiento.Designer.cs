@@ -72,9 +72,9 @@ namespace AEV7_David_Alberto
             this.gpbGestionEmpleados.Cursor = System.Windows.Forms.Cursors.Default;
             this.gpbGestionEmpleados.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbGestionEmpleados.Location = new System.Drawing.Point(823, 68);
-            this.gpbGestionEmpleados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGestionEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.gpbGestionEmpleados.Name = "gpbGestionEmpleados";
-            this.gpbGestionEmpleados.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGestionEmpleados.Padding = new System.Windows.Forms.Padding(4);
             this.gpbGestionEmpleados.Size = new System.Drawing.Size(415, 420);
             this.gpbGestionEmpleados.TabIndex = 0;
             this.gpbGestionEmpleados.TabStop = false;
@@ -83,18 +83,19 @@ namespace AEV7_David_Alberto
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(235, 336);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(137, 42);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Location = new System.Drawing.Point(44, 336);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(137, 42);
             this.btnAgregar.TabIndex = 10;
@@ -106,7 +107,7 @@ namespace AEV7_David_Alberto
             // 
             this.txtContrasenya.Enabled = false;
             this.txtContrasenya.Location = new System.Drawing.Point(119, 270);
-            this.txtContrasenya.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasenya.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasenya.Name = "txtContrasenya";
             this.txtContrasenya.PasswordChar = '*';
             this.txtContrasenya.Size = new System.Drawing.Size(231, 22);
@@ -128,7 +129,7 @@ namespace AEV7_David_Alberto
             this.chkAdministrador.AutoSize = true;
             this.chkAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAdministrador.Location = new System.Drawing.Point(119, 222);
-            this.chkAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkAdministrador.Margin = new System.Windows.Forms.Padding(4);
             this.chkAdministrador.Name = "chkAdministrador";
             this.chkAdministrador.Size = new System.Drawing.Size(133, 22);
             this.chkAdministrador.TabIndex = 7;
@@ -139,7 +140,7 @@ namespace AEV7_David_Alberto
             // txtApellidos
             // 
             this.txtApellidos.Location = new System.Drawing.Point(119, 171);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(231, 22);
             this.txtApellidos.TabIndex = 6;
@@ -147,7 +148,7 @@ namespace AEV7_David_Alberto
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(119, 128);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(231, 22);
             this.txtNombre.TabIndex = 5;
@@ -155,7 +156,7 @@ namespace AEV7_David_Alberto
             // txtNIF
             // 
             this.txtNIF.Location = new System.Drawing.Point(119, 86);
-            this.txtNIF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNIF.Margin = new System.Windows.Forms.Padding(4);
             this.txtNIF.Name = "txtNIF";
             this.txtNIF.Size = new System.Drawing.Size(139, 22);
             this.txtNIF.TabIndex = 4;
@@ -208,7 +209,7 @@ namespace AEV7_David_Alberto
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(957, 556);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(137, 42);
             this.btnCerrar.TabIndex = 12;
@@ -273,7 +274,7 @@ namespace AEV7_David_Alberto
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.gpbGestionEmpleados);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMantenimiento";
             this.Text = "Funcionalidades de Mantenimiento (Perfil Administrador)";
             this.Load += new System.EventHandler(this.FrmMantenimiento_Load);
