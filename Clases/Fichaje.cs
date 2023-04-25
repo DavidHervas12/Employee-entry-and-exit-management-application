@@ -18,17 +18,9 @@ namespace AEV7_David_Alberto.Clases
         public Fichaje(string nif, int sit)
         {
             nifEmpleado = nif;
-            dia = DateTime.Now;
+            dia = DateTime.Now.Date;
             hora_entrada = DateTime.Now;
-            if (situacion==2)
-            {
-                hora_salida = null;
-            }
-            else
-            {
-                hora
-            }
-
+            hora_salida = DateTime.MinValue;
         }
 
         public string NifEmpleado { get { return nifEmpleado; } set { nifEmpleado = value; } }
@@ -36,7 +28,7 @@ namespace AEV7_David_Alberto.Clases
         public DateTime Hora_entrada { get { return hora_entrada; } set { hora_entrada = value; } }
         public DateTime Hora_salida { get { return hora_salida; } }
 
-        public int AgregarFichaje(Fichaje fichaje)
+        public int DarEntrada(Fichaje fichaje)
         {
             int retorno;
             string consulta = String.Format("INSERT INTO empleados (nif,fecha,hora_entrada,hora_salida,situacion) " +
@@ -48,10 +40,48 @@ namespace AEV7_David_Alberto.Clases
             comando.Parameters.AddWithValue("fecha", fichaje.dia);
             comando.Parameters.AddWithValue("hora_entrada", fichaje.hora_entrada);
             comando.Parameters.AddWithValue("hora_salida", fichaje.hora_salida);
-            comando.Parameters.AddWithValue("situacion", fichaje.stuacion);
+            comando.Parameters.AddWithValue("situacion", fichaje.situacion);
             retorno = comando.ExecuteNonQuery();
 
             return retorno;
         }
+
+
+        //public int DarSalida()
+        //{
+
+        //    int retorno;
+        //    String consulta = "UPDATE fichajes SET horasalida=@hs,finalizado=@fin WHERE nombre=@nom AND finalizado=0";
+
+        //    MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+        //    comando.Parameters.AddWithValue("nom", this.nombre);
+        //    comando.Parameters.AddWithValue("hs", this.horaSalida);
+        //    comando.Parameters.AddWithValue("fin", this.finalizado);
+
+        //    retorno = comando.ExecuteNonQuery();
+        //    return retorno;
+        //}
+
+        //public static List<Fichaje> VerFichajesTotales()
+        //{
+        //    List<Fichaje> totalFichajes = new List<Fichaje>();
+        //    String consulta = "SELECT * FROM fichajes";
+        //    MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+        //    MySqlDataReader reader = comando.ExecuteReader();
+
+        //    while (reader.Read())
+        //    {
+        //        Fichaje nuevo = new Fichaje(reader.GetString(0));
+        //        nuevo.fecha = reader.GetDateTime(1);
+        //        nuevo.horaEntrada = Convert.ToDateTime(reader["horaentrada"]);
+        //        nuevo.horaSalida = Convert.ToDateTime(reader["horasalida"]);
+        //        nuevo.finalizado = reader.GetBoolean(4);
+
+        //        totalFichajes.Add(nuevo);
+        //    }
+
+        //    return totalFichajes;
+        //}
+
     }
 }

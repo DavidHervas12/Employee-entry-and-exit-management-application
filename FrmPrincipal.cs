@@ -36,21 +36,21 @@ namespace AEV7_David_Alberto
             timReloj.Interval = 1000;
         }
 
-        private void btnMantenimiento_Click(object sender, EventArgs e)
+        private void btnEntrada_Click(object sender, EventArgs e)
         {
             if (ConexionBD.Conexion != null)
             {
                 ConexionBD.AbrirConexion();
-                if (Empleado.ComprobarAdministrador(mtbDni))
-                {
-                    frmClave = new FrmClave();
-                    frmClave.Show();
-
-                    if (frmClave != null)
+                    if (Empleado.ComprobarAdministrador(mtbDni))
                     {
-                        frmClave.Activate();
+                        frmClave = new FrmClave();
+                        frmClave.Show();
+
+                        if (frmClave != null)
+                        {
+                            frmClave.Activate();
+                        }
                     }
-                }
 
                 ConexionBD.CerrarConexion();
             }
@@ -60,9 +60,43 @@ namespace AEV7_David_Alberto
             }
         }
 
+        private void btnMantenimiento_Click(object sender, EventArgs e)
+        {
+            if (ConexionBD.Conexion != null)
+            {
+                ConexionBD.AbrirConexion();
+                if (Empleado.ValidaNif(mtbDni))
+                {
+                    if (Empleado.ComprobarAdministrador(mtbDni))
+                    {
+                        frmClave = new FrmClave();
+                        frmClave.Show();
+
+                        if (frmClave != null)
+                        {
+                            frmClave.Activate();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El dni introducido no es válido");
+                }
+
+                ConexionBD.CerrarConexion();
+            }
+            else
+            {
+                MessageBox.Show("No existe conexión a la Base de datos");
+            }
+                
+        }
+
         private void mtbdni_TextChanged(object sender, EventArgs e)
         {
             mtbDni.Text = mtbDni.Text.ToUpper();
         }
+
+
     }
 }

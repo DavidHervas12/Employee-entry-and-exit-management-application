@@ -42,8 +42,8 @@ namespace AEV7_David_Alberto
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblReloj = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.rtxtInfo = new System.Windows.Forms.RichTextBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,7 @@ namespace AEV7_David_Alberto
             this.btnEntrada.TabIndex = 0;
             this.btnEntrada.Text = "Entrada";
             this.btnEntrada.UseVisualStyleBackColor = false;
+            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
             // 
             // btnSalida
             // 
@@ -179,6 +180,14 @@ namespace AEV7_David_Alberto
             this.panel1.Size = new System.Drawing.Size(606, 356);
             this.panel1.TabIndex = 12;
             // 
+            // rtxtInfo
+            // 
+            this.rtxtInfo.Location = new System.Drawing.Point(90, 35);
+            this.rtxtInfo.Name = "rtxtInfo";
+            this.rtxtInfo.Size = new System.Drawing.Size(444, 212);
+            this.rtxtInfo.TabIndex = 2;
+            this.rtxtInfo.Text = "";
+            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.SeaGreen;
@@ -190,14 +199,6 @@ namespace AEV7_David_Alberto
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
-            // 
-            // rtxtInfo
-            // 
-            this.rtxtInfo.Location = new System.Drawing.Point(90, 35);
-            this.rtxtInfo.Name = "rtxtInfo";
-            this.rtxtInfo.Size = new System.Drawing.Size(444, 212);
-            this.rtxtInfo.TabIndex = 2;
-            this.rtxtInfo.Text = "";
             // 
             // FrmPrincipal
             // 

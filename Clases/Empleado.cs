@@ -184,6 +184,23 @@ namespace AEV7_David_Alberto.Clases
             return false;
         }
 
+        public static bool ValidaNif(MaskedTextBox dni)
+        {
+            string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            int resto;
+            string letraCorrecta;
+
+
+            int num = int.Parse(dni.Text.Substring(0, 8));
+            string letraDato = dni.Text[9].ToString();
+
+            resto = num % 23;
+            letraCorrecta = letras[resto].ToString();
+
+            if (letraDato == letraCorrecta) return true;
+            return false;
+        }
+
 
         #endregion
     }
