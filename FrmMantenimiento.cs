@@ -42,6 +42,7 @@ namespace AEV7_David_Alberto
                    
                     if (ValidaNifErrorProv(txtNIF))
                     {
+                        errorProv.Clear();
                         Empleado emp = new Empleado(txtNIF.Text, txtNombre.Text, txtApellidos.Text,
                         chkAdministrador.Checked, txtContrasenya.Text);
                         resultado = emp.AgregarEmpleado(emp);
@@ -92,6 +93,7 @@ namespace AEV7_David_Alberto
                         {
                             if (ValidarNIFNoExistido(txtNIF))
                             {
+                                errorProv.Clear();
                                 resultado = Empleado.EliminaEmpleado(txtNIF);
                             }
                         }

@@ -22,5 +22,6 @@ namespace AEV7_David_Alberto.Clases
         public bool Fichaje_entrada { get { return fichaje_entrada; } set { fichaje_entrada = value; } }
         public bool Fichaje_salida { get { return fichaje_salida; } set { fichaje_salida = value; } }
 
+
     }
 }
