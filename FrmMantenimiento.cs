@@ -82,24 +82,27 @@ namespace AEV7_David_Alberto
             {
                 if (ConexionBD.Conexion != null)
                 {
-
-                    DialogResult confirmacion = MessageBox.Show("Borrado de registro seleccionado. ¿Continuar?",
-                                                "Eliminación", MessageBoxButtons.YesNo);
-
-                    if (confirmacion == DialogResult.Yes)
+                    if (ValidaEmpNoExiste(txtNIF))
                     {
-                        if (ConexionBD.Conexion != null)
+
+                        DialogResult confirmacion = MessageBox.Show("Borrado de registro seleccionado. ¿Continuar?",
+                                                    "Eliminación", MessageBoxButtons.YesNo);
+
+                        if (confirmacion == DialogResult.Yes)
                         {
-                            ConexionBD.AbrirConexion();
-                            resultado = Empleado.EliminaEmpleado(txtNIF);
+                            if (ConexionBD.Conexion != null)
+                            {
+                                ConexionBD.AbrirConexion();
+                                resultado = Empleado.EliminaEmpleado(txtNIF);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                            }
+                            // Cierro la conexión
+                            ConexionBD.CerrarConexion();
+                            CargaListaEmpleados();
                         }
-                        else
-                        {
-                            MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
-                        }
-                        // Cierro la conexión
-                        ConexionBD.CerrarConexion();
-                        CargaListaEmpleados();
                     }
                 }
             }
@@ -148,6 +151,20 @@ namespace AEV7_David_Alberto
 
             return ok;
         }
+
+        private bool ValidaEmpNoExiste(TextBox dni)
+        {
+            bool ok = true;
+            if (Empleado.ComprobarEmpleado(dni))
+            {
+                ok = false;
+                errorProv.SetError(dni, "El empleado no está dado de alta");
+            }
+
+            return ok;
+        }
+
+
         #endregion
 
         private void chkAdministrador_CheckedChanged(object sender, EventArgs e)
