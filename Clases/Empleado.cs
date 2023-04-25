@@ -94,20 +94,20 @@ namespace AEV7_David_Alberto.Clases
         }
 
         #region Validaciones
-        public static bool ComprobarEmpleado(TextBox dni)
+        public static bool ComprobarEmpleado(string dni)
         {
             string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
-            comando.Parameters.AddWithValue("nif", dni.Text);
+            comando.Parameters.AddWithValue("nif", dni);
             MySqlDataReader reader = comando.ExecuteReader();
 
             if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
-            {
+            { // Devuelve false si el empleado está en la base de datos.
                 reader.Close();
                 return false;
             }
             else
-            {
+            { // Devuelve true si el empleado está en la base de datos.
                 reader.Close();
                 return true;
             }

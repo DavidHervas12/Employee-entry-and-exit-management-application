@@ -15,12 +15,13 @@ namespace AEV7_David_Alberto.Clases
         private DateTime hora_salida;
         private int situacion;
 
-        public Fichaje(string nif, int sit)
+        public Fichaje(string nif)
         {
             nifEmpleado = nif;
             dia = DateTime.Now.Date;
             hora_entrada = DateTime.Now;
             hora_salida = DateTime.MinValue;
+            situacion = 1;
         }
 
         public string NifEmpleado { get { return nifEmpleado; } set { nifEmpleado = value; } }

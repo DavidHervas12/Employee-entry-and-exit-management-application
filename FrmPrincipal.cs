@@ -1,12 +1,6 @@
 ﻿using AEV7_David_Alberto.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
 
 namespace AEV7_David_Alberto
@@ -38,58 +32,81 @@ namespace AEV7_David_Alberto
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
-            if (ConexionBD.Conexion != null)
+            int resultado = 0;
+
+            try
             {
-                ConexionBD.AbrirConexion();
-                    if (Empleado.ComprobarAdministrador(mtbDni))
+                if (ConexionBD.Conexion != null)
+                {
+                    ConexionBD.AbrirConexion();
+                    if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
                     {
-                        frmClave = new FrmClave();
-                        frmClave.Show();
+                        Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]);
+                        resultado = f.DarEntrada(f);
 
-                        if (frmClave != null)
+
+                        if (resultado > 0)
                         {
-                            frmClave.Activate();
+                            mtbDni.Clear();
                         }
-                    }
 
-                ConexionBD.CerrarConexion();
+                        ConexionBD.CerrarConexion();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No existe conexión a la Base de datos");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
             }
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-            if (ConexionBD.Conexion != null)
+            try
             {
-                ConexionBD.AbrirConexion();
-                if (Empleado.ValidaNif(mtbDni))
+                if (ConexionBD.Conexion != null)
                 {
-                    if (Empleado.ComprobarAdministrador(mtbDni))
+                    if (Empleado.ValidaNif(mtbDni))
                     {
-                        frmClave = new FrmClave();
-                        frmClave.Show();
-
-                        if (frmClave != null)
+                        if (Empleado.ComprobarAdministrador(mtbDni))
                         {
-                            frmClave.Activate();
+                            frmClave = new FrmClave();
+                            frmClave.Show();
+
+                            if (frmClave != null)
+                            {
+                                frmClave.Activate();
+                            }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("El dni introducido no es válido");
+                    }
+
+                    ConexionBD.CerrarConexion();
                 }
                 else
                 {
-                    MessageBox.Show("El dni introducido no es válido");
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
                 ConexionBD.CerrarConexion();
             }
-            else
-            {
-                MessageBox.Show("No existe conexión a la Base de datos");
-            }
-                
         }
 
         private void mtbdni_TextChanged(object sender, EventArgs e)

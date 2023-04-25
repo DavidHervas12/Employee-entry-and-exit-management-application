@@ -127,11 +127,11 @@ namespace AEV7_David_Alberto
             // mtbDni
             // 
             this.mtbDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbDni.Location = new System.Drawing.Point(158, 49);
+            this.mtbDni.Location = new System.Drawing.Point(142, 49);
             this.mtbDni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtbDni.Mask = "00000000-L";
             this.mtbDni.Name = "mtbDni";
-            this.mtbDni.Size = new System.Drawing.Size(444, 98);
+            this.mtbDni.Size = new System.Drawing.Size(475, 98);
             this.mtbDni.TabIndex = 8;
             this.mtbDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbDni.TextChanged += new System.EventHandler(this.mtbdni_TextChanged);
