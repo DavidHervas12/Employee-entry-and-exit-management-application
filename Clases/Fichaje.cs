@@ -32,13 +32,13 @@ namespace AEV7_David_Alberto.Clases
         public int DarEntrada(Fichaje fichaje)
         {
             int retorno;
-            string consulta = String.Format("INSERT INTO empleados (nif,fecha,hora_entrada,hora_salida,situacion) " +
-                "VALUES (@nif,@nom,@ape,@admin,@clave)");
+            string consulta = String.Format("INSERT INTO fichajes (nif,fecha,hora_entrada,hora_salida,situacion) " +
+                "VALUES (@nif,@fecha,@hora_entrada,@hora_salida,@situacion)");
 
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
 
             comando.Parameters.AddWithValue("nif", fichaje.nifEmpleado);
-            comando.Parameters.AddWithValue("fecha", fichaje.dia);
+            comando.Parameters.AddWithValue("fecha", fichaje.dia.ToString("yyyy/MM/dd"));
             comando.Parameters.AddWithValue("hora_entrada", fichaje.hora_entrada);
             comando.Parameters.AddWithValue("hora_salida", fichaje.hora_salida);
             comando.Parameters.AddWithValue("situacion", fichaje.situacion);

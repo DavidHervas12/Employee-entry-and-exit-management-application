@@ -91,7 +91,7 @@ namespace AEV7_David_Alberto
                     {
                         if (ConexionBD.Conexion != null)
                         {
-                            if (ValidarNIFNoExistido(txtNIF))
+                            if (ValidarNIFNoExistente(txtNIF))
                             {
                                 errorProv.Clear();
                                 resultado = Empleado.EliminaEmpleado(txtNIF);
@@ -144,7 +144,7 @@ namespace AEV7_David_Alberto
                 ok = false;
                 errorProv.SetError(dni, "El dni no es válido");
             }
-            if (!Empleado.ComprobarEmpleado(dni))
+            if (!Empleado.ComprobarEmpleado(dni.Text))
             {
                 ok = false;
                 errorProv.SetError(dni, "El DNI del empleado introducido ya existe");
@@ -153,10 +153,10 @@ namespace AEV7_David_Alberto
             return ok;
         }
 
-        private bool ValidarNIFNoExistido(TextBox nif)
+        private bool ValidarNIFNoExistente(TextBox nif)
         {
             bool ok = true;
-            if (Empleado.ComprobarEmpleado(nif))
+            if (Empleado.ComprobarEmpleado(nif.Text))
             {
                 ok = false;
                 errorProv.SetError(nif, "DNI del empleado suministrado no existente");

@@ -39,18 +39,25 @@ namespace AEV7_David_Alberto
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
-                    if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
+                    if (Empleado.ValidaNif(mtbDni))
                     {
-                        Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]);
-                        resultado = f.DarEntrada(f);
-
-
-                        if (resultado > 0)
+                        if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
                         {
-                            mtbDni.Clear();
-                        }
+                            Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]);
+                            resultado = f.DarEntrada(f);
 
-                        ConexionBD.CerrarConexion();
+
+                            if (resultado > 0)
+                            {
+                                mtbDni.Clear();
+                            }
+
+                            ConexionBD.CerrarConexion();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El empleado no está en la base de datos por lo tanto, no se puede realizar el fichaje");
+                        }
                     }
                 }
                 else
