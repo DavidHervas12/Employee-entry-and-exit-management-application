@@ -82,27 +82,26 @@ namespace AEV7_David_Alberto
             {
                 if (ConexionBD.Conexion != null)
                 {
-                    if (ValidaEmpNoExiste(txtNIF))
+                    ConexionBD.AbrirConexion();
+                    DialogResult confirmacion = MessageBox.Show("Borrado de registro seleccionado. ¿Continuar?",
+                                                "Eliminación", MessageBoxButtons.YesNo);
+
+                    if (confirmacion == DialogResult.Yes)
                     {
-
-                        DialogResult confirmacion = MessageBox.Show("Borrado de registro seleccionado. ¿Continuar?",
-                                                    "Eliminación", MessageBoxButtons.YesNo);
-
-                        if (confirmacion == DialogResult.Yes)
+                        if (ConexionBD.Conexion != null)
                         {
-                            if (ConexionBD.Conexion != null)
+                            if (ValidarNIFNoExistido(txtNIF))
                             {
-                                ConexionBD.AbrirConexion();
                                 resultado = Empleado.EliminaEmpleado(txtNIF);
                             }
-                            else
-                            {
-                                MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
-                            }
-                            // Cierro la conexión
-                            ConexionBD.CerrarConexion();
-                            CargaListaEmpleados();
                         }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                        }
+                        // Cierro la conexión
+                        ConexionBD.CerrarConexion();
+                        CargaListaEmpleados();
                     }
                 }
             }
@@ -152,13 +151,13 @@ namespace AEV7_David_Alberto
             return ok;
         }
 
-        private bool ValidaEmpNoExiste(TextBox dni)
+        private bool ValidarNIFNoExistido(TextBox nif)
         {
             bool ok = true;
-            if (Empleado.ComprobarEmpleado(dni))
+            if (Empleado.ComprobarEmpleado(nif))
             {
                 ok = false;
-                errorProv.SetError(dni, "El empleado no está dado de alta");
+                errorProv.SetError(nif, "DNI del empleado suministrado no existente");
             }
 
             return ok;
