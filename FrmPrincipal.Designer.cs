@@ -41,7 +41,11 @@ namespace AEV7_David_Alberto
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblReloj = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.rtxtInfo = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEntrada
@@ -166,12 +170,42 @@ namespace AEV7_David_Alberto
             this.lblReloj.TabIndex = 10;
             this.lblReloj.Text = "Reloj";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rtxtInfo);
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Location = new System.Drawing.Point(68, 177);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(606, 356);
+            this.panel1.TabIndex = 12;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.Honeydew;
+            this.btnVolver.Location = new System.Drawing.Point(220, 280);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(151, 49);
+            this.btnVolver.TabIndex = 0;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            // 
+            // rtxtInfo
+            // 
+            this.rtxtInfo.Location = new System.Drawing.Point(90, 35);
+            this.rtxtInfo.Name = "rtxtInfo";
+            this.rtxtInfo.Size = new System.Drawing.Size(444, 212);
+            this.rtxtInfo.TabIndex = 2;
+            this.rtxtInfo.Text = "";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(1091, 601);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblReloj);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lblFecha);
@@ -187,6 +221,7 @@ namespace AEV7_David_Alberto
             this.Text = "Entrada";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +239,9 @@ namespace AEV7_David_Alberto
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblReloj;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox rtxtInfo;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
 
