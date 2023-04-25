@@ -23,6 +23,7 @@ namespace AEV7_David_Alberto
         private void FrmMantenimiento_Load(object sender, EventArgs e)
         {
             CargaListaEmpleados(); //Cargamos la lista de empleados cuando abrimos el formulario
+            CargaListaFichajes();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -133,6 +134,23 @@ namespace AEV7_David_Alberto
                 MessageBox.Show("No existe conexión a la Base de datos");
             }
         }
+
+        private void CargaListaFichajes()
+        {
+            string seleccion = "Select * from fichajes";
+            if (ConexionBD.Conexion != null)
+            {
+                ConexionBD.AbrirConexion();
+                dgvFichajes.DataSource = Fichaje.BuscarFichajes(seleccion);
+                ConexionBD.CerrarConexion();
+            }
+            else
+            {
+                MessageBox.Show("No existe conexión a la Base de datos");
+            }
+        }
+
+
 
         #region Validaciones
 

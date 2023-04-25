@@ -79,6 +79,7 @@ namespace AEV7_David_Alberto
         {
             try
             {
+                ConexionBD.AbrirConexion();
                 if (ConexionBD.Conexion != null)
                 {
                     if (Empleado.ValidaNif(mtbDni))
