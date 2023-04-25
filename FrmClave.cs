@@ -29,6 +29,7 @@ namespace AEV7_David_Alberto
                 if (Empleado.ComprobarClave(txtClave))
                 {
                     MessageBox.Show("Accediendo a las funcionalidades de mantenimiento");
+                    this.Dispose();
                     ConexionBD.CerrarConexion(); //Cerramos conexion de este formulario para no tener conflictos con el otro
                     frmMantenimiento = new FrmMantenimiento();
                     frmMantenimiento.Show();
