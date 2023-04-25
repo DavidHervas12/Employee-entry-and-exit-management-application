@@ -13,7 +13,7 @@ namespace AEV7_David_Alberto.Clases
         private DateTime fecha;
         private DateTime hora_entrada;
         private DateTime hora_salida;
-        private int situacion;
+        private bool finalizado;
 
         public Fichaje(string nif)
         {
@@ -21,7 +21,7 @@ namespace AEV7_David_Alberto.Clases
             fecha = DateTime.Now.Date;
             hora_entrada = DateTime.Now;
             hora_salida = DateTime.MinValue;
-            situacion = 1;
+            finalizado = false;
         }
 
         public string NifEmpleado { get { return nifEmpleado; } set { nifEmpleado = value; } }
@@ -32,8 +32,8 @@ namespace AEV7_David_Alberto.Clases
         public int DarEntrada(Fichaje fichaje)
         {
             int retorno;
-            string consulta = String.Format("INSERT INTO fichajes (nif,fecha,hora_entrada,hora_salida,situacion) " +
-                "VALUES (@nif,@fecha,@hora_entrada,@hora_salida,@situacion)");
+            string consulta = String.Format("INSERT INTO fichajes (nif,fecha,hora_entrada,hora_salida,finalizado) " +
+                "VALUES (@nif,@fecha,@hora_entrada,@hora_salida,@finalizado)");
 
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
 
@@ -41,7 +41,7 @@ namespace AEV7_David_Alberto.Clases
             comando.Parameters.AddWithValue("fecha", fichaje.fecha.ToString("yyyy/MM/dd"));
             comando.Parameters.AddWithValue("hora_entrada", fichaje.hora_entrada);
             comando.Parameters.AddWithValue("hora_salida", fichaje.hora_salida);
-            comando.Parameters.AddWithValue("situacion", fichaje.situacion);
+            comando.Parameters.AddWithValue("finalizado", fichaje.finalizado);
             retorno = comando.ExecuteNonQuery();
 
             return retorno;
@@ -73,11 +73,10 @@ namespace AEV7_David_Alberto.Clases
             {
                 Fichaje f = new Fichaje(reader.GetString(0));
 
-                f.nifEmpleado = reader.GetString(0);
                 f.fecha = reader.GetDateTime(1);
-                f.hora_entrada = Convert.ToDateTime(reader["horaentrada"]);
-                f.hora_salida = Convert.ToDateTime(reader["horasalida"]);
-                f.situacion = reader.GetInt32(4);
+                f.hora_entrada = Convert.ToDateTime(reader["hora_entrada"]);
+                f.hora_salida = Convert.ToDateTime(reader["hora_salida"]);
+                f.finalizado = reader.GetBoolean(4);
 
                 totalFichajes.Add(f);
             }

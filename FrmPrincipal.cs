@@ -39,6 +39,7 @@ namespace AEV7_David_Alberto
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
+
                     if (Empleado.ValidaNif(mtbDni))
                     {
                         if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
@@ -79,9 +80,11 @@ namespace AEV7_David_Alberto
         {
             try
             {
-                ConexionBD.AbrirConexion();
+                
                 if (ConexionBD.Conexion != null)
                 {
+                    ConexionBD.AbrirConexion();
+
                     if (Empleado.ValidaNif(mtbDni))
                     {
                         if (Empleado.ComprobarAdministrador(mtbDni))
