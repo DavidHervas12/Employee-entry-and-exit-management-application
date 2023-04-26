@@ -28,11 +28,15 @@ namespace AEV7_David_Alberto
         {
             timReloj.Enabled = true;
             timReloj.Interval = 1000;
+            pnlEntrada.Visible = false;
+
         }
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
             int resultado = 0;
+            pbLogo.Visible = false;
+            pnlEntrada.Visible = true;
 
             try
             {
@@ -44,9 +48,8 @@ namespace AEV7_David_Alberto
                     {
                         if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
                         {
-                            Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]);
+                            Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
                             resultado = f.DarEntrada(f);
-
 
                             if (resultado > 0)
                             {
@@ -57,8 +60,11 @@ namespace AEV7_David_Alberto
                         }
                         else
                         {
-                            MessageBox.Show("El empleado no está en la base de datos por lo tanto, no se puede realizar el fichaje");
+                            MessageBox.Show("El empleado no está en la base de datos por lo tanto, no se puede realizar el fichaje","Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
+                    } else
+                    {
+                        MessageBox.Show("El DNI introducido no es correcto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -100,7 +106,7 @@ namespace AEV7_David_Alberto
                     }
                     else
                     {
-                        MessageBox.Show("El dni introducido no es válido");
+                        MessageBox.Show("El DNI introducido no es correcto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                     ConexionBD.CerrarConexion();

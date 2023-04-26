@@ -41,11 +41,11 @@ namespace AEV7_David_Alberto
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblReloj = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlEntrada = new System.Windows.Forms.Panel();
             this.rtxtInfo = new System.Windows.Forms.RichTextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlEntrada.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEntrada
@@ -154,7 +154,7 @@ namespace AEV7_David_Alberto
             this.lblFecha.ForeColor = System.Drawing.Color.SeaGreen;
             this.lblFecha.Location = new System.Drawing.Point(843, 34);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(98, 32);
+            this.lblFecha.Size = new System.Drawing.Size(99, 32);
             this.lblFecha.TabIndex = 11;
             this.lblFecha.Text = "Fecha";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -171,14 +171,14 @@ namespace AEV7_David_Alberto
             this.lblReloj.TabIndex = 10;
             this.lblReloj.Text = "Reloj";
             // 
-            // panel1
+            // pnlEntrada
             // 
-            this.panel1.Controls.Add(this.rtxtInfo);
-            this.panel1.Controls.Add(this.btnVolver);
-            this.panel1.Location = new System.Drawing.Point(68, 177);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(606, 356);
-            this.panel1.TabIndex = 12;
+            this.pnlEntrada.Controls.Add(this.rtxtInfo);
+            this.pnlEntrada.Controls.Add(this.btnVolver);
+            this.pnlEntrada.Location = new System.Drawing.Point(68, 177);
+            this.pnlEntrada.Name = "pnlEntrada";
+            this.pnlEntrada.Size = new System.Drawing.Size(606, 356);
+            this.pnlEntrada.TabIndex = 12;
             // 
             // rtxtInfo
             // 
@@ -206,7 +206,7 @@ namespace AEV7_David_Alberto
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(1091, 601);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlEntrada);
             this.Controls.Add(this.lblReloj);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lblFecha);
@@ -222,7 +222,7 @@ namespace AEV7_David_Alberto
             this.Text = "Entrada";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.pnlEntrada.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,7 +240,7 @@ namespace AEV7_David_Alberto
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblReloj;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlEntrada;
         private System.Windows.Forms.RichTextBox rtxtInfo;
         private System.Windows.Forms.Button btnVolver;
     }

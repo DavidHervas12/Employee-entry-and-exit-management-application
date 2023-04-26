@@ -40,7 +40,7 @@
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(308, 23);
+            this.txtClave.Size = new System.Drawing.Size(308, 27);
             this.txtClave.TabIndex = 0;
             // 
             // lblClave
@@ -49,7 +49,7 @@
             this.lblClave.Location = new System.Drawing.Point(252, 93);
             this.lblClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(229, 17);
+            this.lblClave.Size = new System.Drawing.Size(270, 20);
             this.lblClave.TabIndex = 1;
             this.lblClave.Text = "Introduce la clave de administrador";
             // 
@@ -75,7 +75,7 @@
             // 
             // FrmClave
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 395);
             this.Controls.Add(this.btnAceptar);
