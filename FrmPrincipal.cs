@@ -157,7 +157,6 @@ namespace AEV7_David_Alberto
         {
             try
             {
-
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
