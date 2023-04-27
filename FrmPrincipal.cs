@@ -60,9 +60,9 @@ namespace AEV7_David_Alberto
 
                                 MessageBox.Show("Fichaje de entrada realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-
                                 pbLogo.Visible = false;
-                                txtInfo.Text = $"Entrada Realizada\nDNI:{emp.Nif}\nNombre:{emp.Nombre}--Apellido:{emp.Apellidos}";
+                                pnlEntrada.Visible = true;
+                                txtInfo.Text = $"Entrada Realizada\r\nDNI:{emp.Nif}\r\nNombre:{emp.Nombre} -- Apellido:{emp.Apellidos}"; //utilizamos el retorno de carro \r
                                 
                             }
                             if (resultado > 0)
@@ -212,6 +212,7 @@ namespace AEV7_David_Alberto
         private void btnVolver_Click(object sender, EventArgs e)
         {
             pbLogo.Visible = true;
+            pnlEntrada.Visible = false;
             txtInfo.Clear();
         }
     }
