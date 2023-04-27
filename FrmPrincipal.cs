@@ -183,5 +183,10 @@ namespace AEV7_David_Alberto
         {
             mtbDni.Text = mtbDni.Text.ToUpper();
         }
+
+        private void pbSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
