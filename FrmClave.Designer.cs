@@ -37,11 +37,11 @@
             // txtClave
             // 
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(155, 151);
+            this.txtClave.Location = new System.Drawing.Point(155, 167);
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(433, 38);
+            this.txtClave.Size = new System.Drawing.Size(433, 32);
             this.txtClave.TabIndex = 0;
             // 
             // lblClave
@@ -49,10 +49,10 @@
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClave.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblClave.Location = new System.Drawing.Point(182, 55);
+            this.lblClave.Location = new System.Drawing.Point(217, 91);
             this.lblClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(393, 36);
+            this.lblClave.Size = new System.Drawing.Size(313, 29);
             this.lblClave.TabIndex = 1;
             this.lblClave.Text = "CLAVE ADMINISTRADOR";
             // 
@@ -84,7 +84,7 @@
             // 
             // FrmClave
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(740, 395);

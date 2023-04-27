@@ -57,6 +57,7 @@ namespace AEV7_David_Alberto
             // 
             // gpbGestionEmpleados
             // 
+            this.gpbGestionEmpleados.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.gpbGestionEmpleados.Controls.Add(this.btnEliminar);
             this.gpbGestionEmpleados.Controls.Add(this.btnAgregar);
             this.gpbGestionEmpleados.Controls.Add(this.txtContrasenya);
@@ -71,11 +72,9 @@ namespace AEV7_David_Alberto
             this.gpbGestionEmpleados.Controls.Add(this.lblGestionEmpleados);
             this.gpbGestionEmpleados.Cursor = System.Windows.Forms.Cursors.Default;
             this.gpbGestionEmpleados.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gpbGestionEmpleados.Location = new System.Drawing.Point(815, 68);
-            this.gpbGestionEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.gpbGestionEmpleados.Location = new System.Drawing.Point(611, 55);
             this.gpbGestionEmpleados.Name = "gpbGestionEmpleados";
-            this.gpbGestionEmpleados.Padding = new System.Windows.Forms.Padding(4);
-            this.gpbGestionEmpleados.Size = new System.Drawing.Size(462, 453);
+            this.gpbGestionEmpleados.Size = new System.Drawing.Size(346, 368);
             this.gpbGestionEmpleados.TabIndex = 0;
             this.gpbGestionEmpleados.TabStop = false;
             // 
@@ -84,10 +83,9 @@ namespace AEV7_David_Alberto
             this.btnEliminar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnEliminar.Location = new System.Drawing.Point(235, 336);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(186, 286);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(153, 55);
+            this.btnEliminar.Size = new System.Drawing.Size(115, 45);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -98,10 +96,9 @@ namespace AEV7_David_Alberto
             this.btnAgregar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnAgregar.Location = new System.Drawing.Point(44, 336);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(33, 286);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(153, 55);
+            this.btnAgregar.Size = new System.Drawing.Size(115, 45);
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -111,11 +108,10 @@ namespace AEV7_David_Alberto
             // 
             this.txtContrasenya.Enabled = false;
             this.txtContrasenya.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenya.Location = new System.Drawing.Point(158, 272);
-            this.txtContrasenya.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContrasenya.Location = new System.Drawing.Point(118, 233);
             this.txtContrasenya.Name = "txtContrasenya";
             this.txtContrasenya.PasswordChar = '*';
-            this.txtContrasenya.Size = new System.Drawing.Size(231, 27);
+            this.txtContrasenya.Size = new System.Drawing.Size(174, 23);
             this.txtContrasenya.TabIndex = 9;
             // 
             // label1
@@ -123,22 +119,20 @@ namespace AEV7_David_Alberto
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(37, 275);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(28, 236);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Contraseña:";
             // 
             // chkAdministrador
             // 
             this.chkAdministrador.AutoSize = true;
-            this.chkAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAdministrador.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.chkAdministrador.Location = new System.Drawing.Point(158, 224);
-            this.chkAdministrador.Margin = new System.Windows.Forms.Padding(4);
+            this.chkAdministrador.Location = new System.Drawing.Point(118, 195);
             this.chkAdministrador.Name = "chkAdministrador";
-            this.chkAdministrador.Size = new System.Drawing.Size(135, 24);
+            this.chkAdministrador.Size = new System.Drawing.Size(131, 22);
             this.chkAdministrador.TabIndex = 7;
             this.chkAdministrador.Text = "Administrador";
             this.chkAdministrador.UseVisualStyleBackColor = true;
@@ -147,28 +141,25 @@ namespace AEV7_David_Alberto
             // txtApellidos
             // 
             this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidos.Location = new System.Drawing.Point(158, 173);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellidos.Location = new System.Drawing.Point(118, 153);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(231, 27);
+            this.txtApellidos.Size = new System.Drawing.Size(174, 23);
             this.txtApellidos.TabIndex = 6;
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(158, 130);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(118, 118);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(231, 27);
+            this.txtNombre.Size = new System.Drawing.Size(174, 23);
             this.txtNombre.TabIndex = 5;
             // 
             // txtNIF
             // 
             this.txtNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIF.Location = new System.Drawing.Point(158, 88);
-            this.txtNIF.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNIF.Location = new System.Drawing.Point(118, 85);
             this.txtNIF.Name = "txtNIF";
-            this.txtNIF.Size = new System.Drawing.Size(139, 27);
+            this.txtNIF.Size = new System.Drawing.Size(105, 23);
             this.txtNIF.TabIndex = 4;
             // 
             // lblApellidos
@@ -176,10 +167,9 @@ namespace AEV7_David_Alberto
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidos.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblApellidos.Location = new System.Drawing.Point(56, 176);
-            this.lblApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidos.Location = new System.Drawing.Point(42, 156);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(92, 20);
+            this.lblApellidos.Size = new System.Drawing.Size(79, 17);
             this.lblApellidos.TabIndex = 3;
             this.lblApellidos.Text = "Apellidos:";
             // 
@@ -188,10 +178,9 @@ namespace AEV7_David_Alberto
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblNombre.Location = new System.Drawing.Point(68, 133);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(51, 121);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(80, 20);
+            this.lblNombre.Size = new System.Drawing.Size(69, 17);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -200,10 +189,9 @@ namespace AEV7_David_Alberto
             this.lblNIF.AutoSize = true;
             this.lblNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNIF.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblNIF.Location = new System.Drawing.Point(104, 91);
-            this.lblNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNIF.Location = new System.Drawing.Point(78, 87);
             this.lblNIF.Name = "lblNIF";
-            this.lblNIF.Size = new System.Drawing.Size(44, 20);
+            this.lblNIF.Size = new System.Drawing.Size(37, 17);
             this.lblNIF.TabIndex = 1;
             this.lblNIF.Text = "NIF:";
             // 
@@ -212,10 +200,9 @@ namespace AEV7_David_Alberto
             this.lblGestionEmpleados.AutoSize = true;
             this.lblGestionEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionEmpleados.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblGestionEmpleados.Location = new System.Drawing.Point(38, 31);
-            this.lblGestionEmpleados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGestionEmpleados.Location = new System.Drawing.Point(28, 25);
             this.lblGestionEmpleados.Name = "lblGestionEmpleados";
-            this.lblGestionEmpleados.Size = new System.Drawing.Size(390, 32);
+            this.lblGestionEmpleados.Size = new System.Drawing.Size(311, 26);
             this.lblGestionEmpleados.TabIndex = 0;
             this.lblGestionEmpleados.Text = "GESTIÓN DE EMPLEADOS";
             // 
@@ -224,10 +211,9 @@ namespace AEV7_David_Alberto
             this.btnCerrar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnCerrar.Location = new System.Drawing.Point(957, 556);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrar.Location = new System.Drawing.Point(718, 452);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(153, 55);
+            this.btnCerrar.Size = new System.Drawing.Size(115, 45);
             this.btnCerrar.TabIndex = 12;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -236,32 +222,33 @@ namespace AEV7_David_Alberto
             // dgvEmpleados
             // 
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(33, 68);
-            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvEmpleados.Location = new System.Drawing.Point(25, 55);
+            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 51;
             this.dgvEmpleados.RowTemplate.Height = 24;
-            this.dgvEmpleados.Size = new System.Drawing.Size(739, 274);
+            this.dgvEmpleados.Size = new System.Drawing.Size(554, 223);
             this.dgvEmpleados.TabIndex = 13;
             // 
             // dgvFichajes
             // 
             this.dgvFichajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFichajes.Location = new System.Drawing.Point(33, 389);
-            this.dgvFichajes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvFichajes.Location = new System.Drawing.Point(25, 316);
+            this.dgvFichajes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvFichajes.Name = "dgvFichajes";
             this.dgvFichajes.RowHeadersWidth = 51;
             this.dgvFichajes.RowTemplate.Height = 24;
-            this.dgvFichajes.Size = new System.Drawing.Size(739, 271);
+            this.dgvFichajes.Size = new System.Drawing.Size(554, 220);
             this.dgvFichajes.TabIndex = 14;
             // 
             // lblInfoEmpleados
             // 
             this.lblInfoEmpleados.AutoSize = true;
             this.lblInfoEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoEmpleados.Location = new System.Drawing.Point(29, 47);
+            this.lblInfoEmpleados.Location = new System.Drawing.Point(22, 38);
+            this.lblInfoEmpleados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfoEmpleados.Name = "lblInfoEmpleados";
-            this.lblInfoEmpleados.Size = new System.Drawing.Size(232, 18);
+            this.lblInfoEmpleados.Size = new System.Drawing.Size(195, 15);
             this.lblInfoEmpleados.TabIndex = 15;
             this.lblInfoEmpleados.Text = "Información de EMPLEADOS:";
             // 
@@ -269,9 +256,10 @@ namespace AEV7_David_Alberto
             // 
             this.lblInfoFichajes.AutoSize = true;
             this.lblInfoFichajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoFichajes.Location = new System.Drawing.Point(29, 368);
+            this.lblInfoFichajes.Location = new System.Drawing.Point(22, 299);
+            this.lblInfoFichajes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfoFichajes.Name = "lblInfoFichajes";
-            this.lblInfoFichajes.Size = new System.Drawing.Size(209, 18);
+            this.lblInfoFichajes.Size = new System.Drawing.Size(175, 15);
             this.lblInfoFichajes.TabIndex = 16;
             this.lblInfoFichajes.Text = "Información de FICHAJES:";
             // 
@@ -281,17 +269,16 @@ namespace AEV7_David_Alberto
             // 
             // FrmMantenimiento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1304, 694);
+            this.ClientSize = new System.Drawing.Size(978, 564);
             this.Controls.Add(this.lblInfoFichajes);
             this.Controls.Add(this.lblInfoEmpleados);
             this.Controls.Add(this.dgvFichajes);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.gpbGestionEmpleados);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMantenimiento";
             this.Text = "Funcionalidades de Mantenimiento (Perfil Administrador)";
             this.Load += new System.EventHandler(this.FrmMantenimiento_Load);
