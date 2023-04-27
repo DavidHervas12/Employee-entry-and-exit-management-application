@@ -266,6 +266,7 @@ namespace AEV7_David_Alberto
             this.Controls.Add(this.pnlEntrada);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.mtbDni);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPrincipal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

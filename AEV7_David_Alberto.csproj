@@ -62,6 +62,12 @@
     <Compile Include="FrmMantenimiento.Designer.cs">
       <DependentUpon>FrmMantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPermanencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermanencia.Designer.cs">
+      <DependentUpon>FrmPermanencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMantenimiento.resx">
       <DependentUpon>FrmMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermanencia.resx">
+      <DependentUpon>FrmPermanencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
