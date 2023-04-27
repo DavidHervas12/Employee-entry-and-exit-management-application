@@ -15,19 +15,21 @@ namespace AEV7_David_Alberto.Clases
         private DateTime hora_salida;
         private bool finalizado;
 
+        public string NifEmpleado { get { return nifEmpleado; } set { nifEmpleado = value; } }
+        public DateTime Fecha { get { return fecha; } set { fecha = value; } }
+        public DateTime Hora_entrada { get { return hora_entrada; } set { hora_entrada = value; } }
+        public DateTime Hora_salida { get { return hora_salida; } set { hora_salida = value; } }
+        public bool Finalizado { get { return finalizado; } set { finalizado = value; } }
+
+
         public Fichaje(string nif)
         {
             nifEmpleado = nif;
             fecha = DateTime.Now.Date;
             hora_entrada = DateTime.Now;
-            hora_salida = DateTime.MinValue;
+            hora_salida = DateTime.MinValue; //Valor mínimo posible
             finalizado = false;
         }
-
-        public string NifEmpleado { get { return nifEmpleado; } set { nifEmpleado = value; } }
-        public DateTime Fecha { get { return fecha; } set { fecha = value; } }
-        public DateTime Hora_entrada { get { return hora_entrada; } set { hora_entrada = value; } }
-        public DateTime Hora_salida { get { return hora_salida; } }
 
         public int DarEntrada(Fichaje fichaje)
         {
@@ -48,20 +50,19 @@ namespace AEV7_David_Alberto.Clases
         }
 
 
-        //public int DarSalida()
-        //{
+        public int DarSalida(Fichaje fich)
+        {
+            int retorno;
+            String consulta = "UPDATE fichajes SET hora_salida=@hora_salida,finalizado=@fin WHERE nif=@nif AND finalizado=0"; //Se actualizará los que el finalizado sea a false ya que todavía no han terminado
 
-        //    int retorno;
-        //    String consulta = "UPDATE fichajes SET horasalida=@hs,finalizado=@fin WHERE nombre=@nom AND finalizado=0";
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("hora_salida", fich.hora_salida);
+            comando.Parameters.AddWithValue("fin", fich.finalizado);
+            comando.Parameters.AddWithValue("nif", fich.nifEmpleado);
 
-        //    MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
-        //    comando.Parameters.AddWithValue("nom", this.nombre);
-        //    comando.Parameters.AddWithValue("hs", this.horaSalida);
-        //    comando.Parameters.AddWithValue("fin", this.finalizado);
-
-        //    retorno = comando.ExecuteNonQuery();
-        //    return retorno;
-        //}
+            retorno = comando.ExecuteNonQuery();
+            return retorno;
+        }
 
         public static List<Fichaje> BuscarFichajes(string consulta)
         {

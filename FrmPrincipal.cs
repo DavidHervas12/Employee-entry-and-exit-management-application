@@ -51,6 +51,7 @@ namespace AEV7_David_Alberto
                             Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
                             resultado = f.DarEntrada(f);
 
+                            MessageBox.Show("Fichaje de entrada realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             if (resultado > 0)
                             {
                                 mtbDni.Clear();
@@ -81,6 +82,58 @@ namespace AEV7_David_Alberto
                 ConexionBD.CerrarConexion();
             }
         }
+
+        private void btnSalida_Click(object sender, EventArgs e)
+        {
+            int resultado = 0;
+
+            try
+            {
+                if (ConexionBD.Conexion != null)
+                {
+                    ConexionBD.AbrirConexion();
+
+                    if (Empleado.ValidaNif(mtbDni))
+                    {
+                        if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
+                        {
+                            Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
+                            f.Hora_salida = DateTime.Now;
+                            f.Finalizado = true;
+
+                            resultado = f.DarSalida(f); //Damos de salida el fichaje ya que lo hemos colocado finalizado a true.
+                            MessageBox.Show("Fichaje de salida realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            if (resultado > 0)
+                            { 
+                                mtbDni.Clear();
+                            }
+
+                            ConexionBD.CerrarConexion();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El empleado no está en la base de datos por lo tanto, no se puede realizar el fichaje", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("NIF introducido incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
+            }
+        }    
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
@@ -130,7 +183,5 @@ namespace AEV7_David_Alberto
         {
             mtbDni.Text = mtbDni.Text.ToUpper();
         }
-
-
     }
 }

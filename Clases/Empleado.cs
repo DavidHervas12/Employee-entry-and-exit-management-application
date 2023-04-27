@@ -107,7 +107,7 @@ namespace AEV7_David_Alberto.Clases
                 return false;
             }
             else
-            { // Devuelve true si el empleado está en la base de datos.
+            { // Devuelve true si el empleado no está en la base de datos.
                 reader.Close();
                 return true;
             }
@@ -115,7 +115,7 @@ namespace AEV7_David_Alberto.Clases
 
         public static bool ComprobarAdministrador(MaskedTextBox dni)
         {
-            string nif = dni.Text.Substring(0, 8) + dni.Text[9];
+            string nif = dni.Text.Substring(0, 8) + dni.Text[9]; //NIF sin guiones
             FrmPrincipal.NIF = nif;
 
             string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");

@@ -54,10 +54,10 @@ namespace AEV7_David_Alberto
             this.btnEntrada.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrada.ForeColor = System.Drawing.Color.Honeydew;
-            this.btnEntrada.Location = new System.Drawing.Point(789, 177);
-            this.btnEntrada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEntrada.Location = new System.Drawing.Point(592, 144);
+            this.btnEntrada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(219, 54);
+            this.btnEntrada.Size = new System.Drawing.Size(164, 44);
             this.btnEntrada.TabIndex = 0;
             this.btnEntrada.Text = "Entrada";
             this.btnEntrada.UseVisualStyleBackColor = false;
@@ -69,13 +69,14 @@ namespace AEV7_David_Alberto
             this.btnSalida.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalida.ForeColor = System.Drawing.Color.Honeydew;
-            this.btnSalida.Location = new System.Drawing.Point(789, 258);
-            this.btnSalida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalida.Location = new System.Drawing.Point(592, 210);
+            this.btnSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalida.Name = "btnSalida";
-            this.btnSalida.Size = new System.Drawing.Size(219, 54);
+            this.btnSalida.Size = new System.Drawing.Size(164, 44);
             this.btnSalida.TabIndex = 1;
             this.btnSalida.Text = "Salida";
             this.btnSalida.UseVisualStyleBackColor = false;
+            this.btnSalida.Click += new System.EventHandler(this.btnSalida_Click);
             // 
             // btnPresencia
             // 
@@ -83,10 +84,10 @@ namespace AEV7_David_Alberto
             this.btnPresencia.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnPresencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresencia.ForeColor = System.Drawing.Color.Honeydew;
-            this.btnPresencia.Location = new System.Drawing.Point(789, 336);
-            this.btnPresencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPresencia.Location = new System.Drawing.Point(592, 273);
+            this.btnPresencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPresencia.Name = "btnPresencia";
-            this.btnPresencia.Size = new System.Drawing.Size(219, 54);
+            this.btnPresencia.Size = new System.Drawing.Size(164, 44);
             this.btnPresencia.TabIndex = 2;
             this.btnPresencia.Text = "Presencia";
             this.btnPresencia.UseVisualStyleBackColor = false;
@@ -97,10 +98,10 @@ namespace AEV7_David_Alberto
             this.btnPermanencia.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnPermanencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPermanencia.ForeColor = System.Drawing.Color.Honeydew;
-            this.btnPermanencia.Location = new System.Drawing.Point(789, 416);
-            this.btnPermanencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPermanencia.Location = new System.Drawing.Point(592, 338);
+            this.btnPermanencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPermanencia.Name = "btnPermanencia";
-            this.btnPermanencia.Size = new System.Drawing.Size(219, 54);
+            this.btnPermanencia.Size = new System.Drawing.Size(164, 44);
             this.btnPermanencia.TabIndex = 3;
             this.btnPermanencia.Text = "Permanencia";
             this.btnPermanencia.UseVisualStyleBackColor = false;
@@ -111,10 +112,10 @@ namespace AEV7_David_Alberto
             this.btnMantenimiento.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMantenimiento.ForeColor = System.Drawing.Color.Honeydew;
-            this.btnMantenimiento.Location = new System.Drawing.Point(789, 492);
-            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMantenimiento.Location = new System.Drawing.Point(580, 400);
+            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMantenimiento.Name = "btnMantenimiento";
-            this.btnMantenimiento.Size = new System.Drawing.Size(219, 54);
+            this.btnMantenimiento.Size = new System.Drawing.Size(191, 44);
             this.btnMantenimiento.TabIndex = 4;
             this.btnMantenimiento.Text = "Mantenimiento";
             this.btnMantenimiento.UseVisualStyleBackColor = false;
@@ -127,11 +128,11 @@ namespace AEV7_David_Alberto
             // mtbDni
             // 
             this.mtbDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbDni.Location = new System.Drawing.Point(142, 49);
-            this.mtbDni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtbDni.Location = new System.Drawing.Point(106, 40);
+            this.mtbDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtbDni.Mask = "00000000-L";
             this.mtbDni.Name = "mtbDni";
-            this.mtbDni.Size = new System.Drawing.Size(475, 98);
+            this.mtbDni.Size = new System.Drawing.Size(357, 80);
             this.mtbDni.TabIndex = 8;
             this.mtbDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbDni.TextChanged += new System.EventHandler(this.mtbdni_TextChanged);
@@ -139,9 +140,10 @@ namespace AEV7_David_Alberto
             // pbLogo
             // 
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(68, 177);
+            this.pbLogo.Location = new System.Drawing.Point(51, 144);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(606, 356);
+            this.pbLogo.Size = new System.Drawing.Size(454, 289);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 10;
             this.pbLogo.TabStop = false;
@@ -152,9 +154,10 @@ namespace AEV7_David_Alberto
             this.lblFecha.BackColor = System.Drawing.Color.Honeydew;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblFecha.Location = new System.Drawing.Point(843, 34);
+            this.lblFecha.Location = new System.Drawing.Point(632, 28);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(99, 32);
+            this.lblFecha.Size = new System.Drawing.Size(77, 26);
             this.lblFecha.TabIndex = 11;
             this.lblFecha.Text = "Fecha";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -165,9 +168,10 @@ namespace AEV7_David_Alberto
             this.lblReloj.BackColor = System.Drawing.Color.Honeydew;
             this.lblReloj.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReloj.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblReloj.Location = new System.Drawing.Point(842, 76);
+            this.lblReloj.Location = new System.Drawing.Point(632, 62);
+            this.lblReloj.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReloj.Name = "lblReloj";
-            this.lblReloj.Size = new System.Drawing.Size(98, 38);
+            this.lblReloj.Size = new System.Drawing.Size(78, 29);
             this.lblReloj.TabIndex = 10;
             this.lblReloj.Text = "Reloj";
             // 
@@ -175,16 +179,18 @@ namespace AEV7_David_Alberto
             // 
             this.pnlEntrada.Controls.Add(this.rtxtInfo);
             this.pnlEntrada.Controls.Add(this.btnVolver);
-            this.pnlEntrada.Location = new System.Drawing.Point(68, 177);
+            this.pnlEntrada.Location = new System.Drawing.Point(51, 144);
+            this.pnlEntrada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEntrada.Name = "pnlEntrada";
-            this.pnlEntrada.Size = new System.Drawing.Size(606, 356);
+            this.pnlEntrada.Size = new System.Drawing.Size(454, 289);
             this.pnlEntrada.TabIndex = 12;
             // 
             // rtxtInfo
             // 
-            this.rtxtInfo.Location = new System.Drawing.Point(90, 35);
+            this.rtxtInfo.Location = new System.Drawing.Point(68, 28);
+            this.rtxtInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtxtInfo.Name = "rtxtInfo";
-            this.rtxtInfo.Size = new System.Drawing.Size(444, 212);
+            this.rtxtInfo.Size = new System.Drawing.Size(334, 173);
             this.rtxtInfo.TabIndex = 2;
             this.rtxtInfo.Text = "";
             // 
@@ -193,19 +199,20 @@ namespace AEV7_David_Alberto
             this.btnVolver.BackColor = System.Drawing.Color.SeaGreen;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.Honeydew;
-            this.btnVolver.Location = new System.Drawing.Point(220, 280);
+            this.btnVolver.Location = new System.Drawing.Point(165, 228);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(151, 49);
+            this.btnVolver.Size = new System.Drawing.Size(113, 40);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(1091, 601);
+            this.ClientSize = new System.Drawing.Size(818, 488);
             this.Controls.Add(this.pnlEntrada);
             this.Controls.Add(this.lblReloj);
             this.Controls.Add(this.pbLogo);
@@ -216,7 +223,7 @@ namespace AEV7_David_Alberto
             this.Controls.Add(this.btnPresencia);
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnEntrada);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrada";
