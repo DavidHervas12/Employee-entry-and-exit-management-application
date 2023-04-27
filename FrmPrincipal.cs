@@ -56,8 +56,13 @@ namespace AEV7_David_Alberto
                             {
                                 Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
                                 resultado = f.DarEntrada(f);
+                                Empleado emp = Empleado.BuscarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]);
 
                                 MessageBox.Show("Fichaje de entrada realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+
+                                pbLogo.Visible = false;
+                                txtInfo.Text = $"Entrada Realizada\nDNI:{emp.Nif}\nNombre:{emp.Nombre}--Apellido:{emp.Apellidos}";
                             }
                             if (resultado > 0)
                             {
@@ -201,6 +206,12 @@ namespace AEV7_David_Alberto
         private void pbSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            pbLogo.Visible = true;
+            txtInfo.Clear();
         }
     }
 }

@@ -126,7 +126,7 @@ namespace AEV7_David_Alberto
             if (ConexionBD.Conexion != null)
             {
                 ConexionBD.AbrirConexion();
-                dgvEmpleados.DataSource = Empleado.BuscarEmpleado(seleccion);
+                dgvEmpleados.DataSource = Empleado.VerEmpleadosTotales(seleccion);
                 ConexionBD.CerrarConexion();
             }
             else
@@ -141,7 +141,7 @@ namespace AEV7_David_Alberto
             if (ConexionBD.Conexion != null)
             {
                 ConexionBD.AbrirConexion();
-                dgvFichajes.DataSource = Fichaje.BuscarFichajes(seleccion);
+                dgvFichajes.DataSource = Fichaje.VerFichajesTotales(seleccion);
                 ConexionBD.CerrarConexion();
             }
             else

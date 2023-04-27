@@ -65,7 +65,7 @@ namespace AEV7_David_Alberto.Clases
             return retorno;
         }
 
-        public static List<Fichaje> BuscarFichajes(string consulta)
+        public static List<Fichaje> VerFichajesTotales(string consulta)
         {
             List<Fichaje> totalFichajes = new List<Fichaje>();
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
