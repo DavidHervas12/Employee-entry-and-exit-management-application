@@ -189,9 +189,7 @@ namespace AEV7_David_Alberto
         private void chkAdministrador_CheckedChanged(object sender, EventArgs e)
         {
             txtContrasenya.Enabled = chkAdministrador.Checked;
-            txtContrasenya.Text="";
+            txtContrasenya.Text = "";
         }
-
-
     }
 }

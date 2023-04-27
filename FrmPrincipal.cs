@@ -60,7 +60,7 @@ namespace AEV7_David_Alberto
 
                                 pbLogo.Visible = false;
                                 pnlEntrada.Visible = true;
-                                txtInfo.Text = $"Entrada Realizada\r\nDNI:{emp.Nif}\r\nNombre:{emp.Nombre} -- Apellido:{emp.Apellidos}"; //utilizamos el retorno de carro \r
+                                txtInfo.Text = $"Entrada Realizada\r\nNombre:{emp.Nombre} -- Apellido:{emp.Apellidos}"; //utilizamos el retorno de carro \r
                                 
                             }
                             if (resultado > 0)
@@ -118,7 +118,7 @@ namespace AEV7_David_Alberto
                                 pbLogo.Visible = false;
                                 pnlEntrada.Visible = true;
                                 resultado = f.DarSalida(f); //Damos de salida el fichaje ya que lo hemos colocado finalizado a true.
-                                txtInfo.Text = "Salida Realizada\r\n\r\nDNI: " + empl.Nif + "\r\nNombre: " + empl.Nombre + " Apellidos: " + empl.Apellidos;
+                                txtInfo.Text = "Salida Realizada\r\n\r\nNombre: " + empl.Nombre + " Apellidos: " + empl.Apellidos;
                             }
                             else
                             {
@@ -253,6 +253,9 @@ namespace AEV7_David_Alberto
             txtInfo.Clear();
         }
 
+        private void btnPermanencia_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

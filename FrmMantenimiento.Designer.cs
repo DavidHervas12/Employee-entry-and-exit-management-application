@@ -75,7 +75,7 @@ namespace AEV7_David_Alberto
             this.gpbGestionEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.gpbGestionEmpleados.Name = "gpbGestionEmpleados";
             this.gpbGestionEmpleados.Padding = new System.Windows.Forms.Padding(4);
-            this.gpbGestionEmpleados.Size = new System.Drawing.Size(436, 453);
+            this.gpbGestionEmpleados.Size = new System.Drawing.Size(462, 453);
             this.gpbGestionEmpleados.TabIndex = 0;
             this.gpbGestionEmpleados.TabStop = false;
             // 
@@ -210,12 +210,12 @@ namespace AEV7_David_Alberto
             // lblGestionEmpleados
             // 
             this.lblGestionEmpleados.AutoSize = true;
-            this.lblGestionEmpleados.Font = new System.Drawing.Font("Liberation Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionEmpleados.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblGestionEmpleados.Location = new System.Drawing.Point(38, 31);
             this.lblGestionEmpleados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGestionEmpleados.Name = "lblGestionEmpleados";
-            this.lblGestionEmpleados.Size = new System.Drawing.Size(354, 31);
+            this.lblGestionEmpleados.Size = new System.Drawing.Size(390, 32);
             this.lblGestionEmpleados.TabIndex = 0;
             this.lblGestionEmpleados.Text = "GESTIÓN DE EMPLEADOS";
             // 
@@ -284,7 +284,7 @@ namespace AEV7_David_Alberto
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1264, 694);
+            this.ClientSize = new System.Drawing.Size(1304, 694);
             this.Controls.Add(this.lblInfoFichajes);
             this.Controls.Add(this.lblInfoEmpleados);
             this.Controls.Add(this.dgvFichajes);

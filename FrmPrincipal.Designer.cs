@@ -42,11 +42,11 @@ namespace AEV7_David_Alberto
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblReloj = new System.Windows.Forms.Label();
             this.pnlEntrada = new System.Windows.Forms.Panel();
+            this.txtInfo = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbSalir = new System.Windows.Forms.PictureBox();
-            this.txtInfo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlEntrada.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -112,6 +112,7 @@ namespace AEV7_David_Alberto
             this.btnPermanencia.TabIndex = 3;
             this.btnPermanencia.Text = "Permanencia";
             this.btnPermanencia.UseVisualStyleBackColor = false;
+            this.btnPermanencia.Click += new System.EventHandler(this.btnPermanencia_Click);
             // 
             // btnMantenimiento
             // 
@@ -161,11 +162,11 @@ namespace AEV7_David_Alberto
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lblFecha.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblFecha.Location = new System.Drawing.Point(159, 7);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(72, 27);
+            this.lblFecha.Size = new System.Drawing.Size(72, 25);
             this.lblFecha.TabIndex = 11;
             this.lblFecha.Text = "Fecha";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -174,11 +175,11 @@ namespace AEV7_David_Alberto
             // 
             this.lblReloj.AutoSize = true;
             this.lblReloj.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lblReloj.Font = new System.Drawing.Font("Cascadia Mono", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReloj.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReloj.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblReloj.Location = new System.Drawing.Point(9, 45);
             this.lblReloj.Name = "lblReloj";
-            this.lblReloj.Size = new System.Drawing.Size(167, 62);
+            this.lblReloj.Size = new System.Drawing.Size(138, 55);
             this.lblReloj.TabIndex = 10;
             this.lblReloj.Text = "Reloj";
             // 
@@ -192,6 +193,16 @@ namespace AEV7_David_Alberto
             this.pnlEntrada.Size = new System.Drawing.Size(626, 371);
             this.pnlEntrada.TabIndex = 12;
             this.pnlEntrada.Visible = false;
+            // 
+            // txtInfo
+            // 
+            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfo.Location = new System.Drawing.Point(20, 16);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(586, 278);
+            this.txtInfo.TabIndex = 1;
+            this.txtInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnVolver
             // 
@@ -243,16 +254,6 @@ namespace AEV7_David_Alberto
             this.pbSalir.TabIndex = 15;
             this.pbSalir.TabStop = false;
             this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
-            // 
-            // txtInfo
-            // 
-            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInfo.Location = new System.Drawing.Point(20, 16);
-            this.txtInfo.Multiline = true;
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(586, 278);
-            this.txtInfo.TabIndex = 1;
-            this.txtInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmPrincipal
             // 
