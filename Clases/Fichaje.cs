@@ -82,7 +82,7 @@ namespace AEV7_David_Alberto.Clases
 
                 totalFichajes.Add(f);
             }
-
+            reader.Close();
             return totalFichajes;
         }
 

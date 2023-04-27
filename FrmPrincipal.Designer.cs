@@ -97,6 +97,7 @@ namespace AEV7_David_Alberto
             this.btnPresencia.TabIndex = 2;
             this.btnPresencia.Text = "Presencia";
             this.btnPresencia.UseVisualStyleBackColor = false;
+            this.btnPresencia.Click += new System.EventHandler(this.btnPresencia_Click);
             // 
             // btnPermanencia
             // 

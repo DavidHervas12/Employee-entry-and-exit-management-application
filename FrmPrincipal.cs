@@ -1,5 +1,7 @@
 ﻿using AEV7_David_Alberto.Clases;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using System.Windows.Forms;
 
@@ -35,8 +37,6 @@ namespace AEV7_David_Alberto
         private void btnEntrada_Click(object sender, EventArgs e)
         {
             int resultado = 0;
-            pbLogo.Visible = false;
-            pnlEntrada.Visible = true;
 
             try
             {
@@ -57,8 +57,6 @@ namespace AEV7_David_Alberto
                                 Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
                                 resultado = f.DarEntrada(f);
                                 Empleado emp = Empleado.BuscarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]);
-
-                                MessageBox.Show("Fichaje de entrada realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                                 pbLogo.Visible = false;
                                 pnlEntrada.Visible = true;
@@ -153,7 +151,45 @@ namespace AEV7_David_Alberto
             {
                 ConexionBD.CerrarConexion();
             }
-        }    
+        }
+
+        private void btnPresencia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (ConexionBD.Conexion != null)
+                {
+                    ConexionBD.AbrirConexion();
+
+                    pbLogo.Visible = false;
+                    pnlEntrada.Visible = true;
+
+                    txtInfo.Text = "Empleados trabajando:";
+                    List<Fichaje> actuales = Fichaje.VerFichajesTotales("SELECT * FROM fichajes WHERE finalizado=0");
+
+                    foreach (Fichaje f in actuales)
+                    {
+                        Empleado emp = Empleado.BuscarEmpleado(f.NifEmpleado);
+                        txtInfo.Text += $"\r\nDNI:{emp.Nif} -- {emp.Nombre} -- {emp.Apellidos}"; ;
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
+            }
+        }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
@@ -215,5 +251,7 @@ namespace AEV7_David_Alberto
             pnlEntrada.Visible = false;
             txtInfo.Clear();
         }
+
+
     }
 }
