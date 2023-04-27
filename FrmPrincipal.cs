@@ -56,7 +56,7 @@ namespace AEV7_David_Alberto
                             {
                                 Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
                                 resultado = f.DarEntrada(f);
-                                Empleado emp = Empleado.BuscarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]);
+                                Empleado emp = Empleado.BuscarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Almacenas empleado con el nif correspondiente
 
                                 pbLogo.Visible = false;
                                 pnlEntrada.Visible = true;
@@ -113,9 +113,12 @@ namespace AEV7_David_Alberto
                                 Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
                                 f.Hora_salida = DateTime.Now;
                                 f.Finalizado = true;
+                                Empleado empl = Empleado.BuscarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Almacenas empleado con el nif correspondiente
 
+                                pbLogo.Visible = false;
+                                pnlEntrada.Visible = true;
                                 resultado = f.DarSalida(f); //Damos de salida el fichaje ya que lo hemos colocado finalizado a true.
-                                MessageBox.Show("Fichaje de salida realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                txtInfo.Text = "Salida Realizada\r\n\r\nDNI: " + empl.Nif + "\r\nNombre: " + empl.Nombre + " Apellidos: " + empl.Apellidos;
                             }
                             else
                             {
@@ -161,7 +164,6 @@ namespace AEV7_David_Alberto
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
-
                     pbLogo.Visible = false;
                     pnlEntrada.Visible = true;
 
@@ -171,7 +173,7 @@ namespace AEV7_David_Alberto
                     foreach (Fichaje f in actuales)
                     {
                         Empleado emp = Empleado.BuscarEmpleado(f.NifEmpleado);
-                        txtInfo.Text += $"\r\nDNI:{emp.Nif} -- {emp.Nombre} -- {emp.Apellidos}"; ;
+                        txtInfo.Text += $"\r\nDNI:{emp.Nif} -- {emp.Nombre} -- {emp.Apellidos}";
                     }
 
                     ConexionBD.CerrarConexion();

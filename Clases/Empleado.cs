@@ -91,7 +91,7 @@ namespace AEV7_David_Alberto.Clases
             
 
             if (reader.HasRows && reader.Read())   // En caso que se hayan registros en el objeto reader
-            { // Devuelve false si el empleado está en la base de datos.
+            {
                 Empleado emp = new Empleado();
                 emp.nif = reader.GetString(0);
                 emp.nombre = reader.GetString(1);
@@ -102,7 +102,7 @@ namespace AEV7_David_Alberto.Clases
                 return emp;
             }
             else
-            { // Devuelve true si el empleado no está en la base de datos.
+            {
                 reader.Close();
                 return null;
             }
@@ -226,8 +226,6 @@ namespace AEV7_David_Alberto.Clases
             if (letraDato == letraCorrecta) return true;
             return false;
         }
-
-
         #endregion
     }
 }
