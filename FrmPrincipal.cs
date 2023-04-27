@@ -97,12 +97,19 @@ namespace AEV7_David_Alberto
                     {
                         if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
                         {
-                            Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
-                            f.Hora_salida = DateTime.Now;
-                            f.Finalizado = true;
+                            if (Fichaje.ComprobarEntradaFichaje(mtbDni))
+                            {
+                                Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
+                                f.Hora_salida = DateTime.Now;
+                                f.Finalizado = true;
 
-                            resultado = f.DarSalida(f); //Damos de salida el fichaje ya que lo hemos colocado finalizado a true.
-                            MessageBox.Show("Fichaje de salida realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                resultado = f.DarSalida(f); //Damos de salida el fichaje ya que lo hemos colocado finalizado a true.
+                                MessageBox.Show("Fichaje de salida realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            }
+                            else
+                            {
+                                MessageBox.Show("El empleado no esta dado de entrada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                             if (resultado > 0)
                             { 
                                 mtbDni.Clear();
