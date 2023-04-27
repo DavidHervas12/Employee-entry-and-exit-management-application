@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AEV7_David_Alberto.Clases
 {
@@ -40,7 +41,7 @@ namespace AEV7_David_Alberto.Clases
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
 
             comando.Parameters.AddWithValue("nif", fichaje.nifEmpleado);
-            comando.Parameters.AddWithValue("fecha", fichaje.fecha.ToString("yyyy/MM/dd"));
+            comando.Parameters.AddWithValue("fecha", fichaje.fecha);
             comando.Parameters.AddWithValue("hora_entrada", fichaje.hora_entrada);
             comando.Parameters.AddWithValue("hora_salida", fichaje.hora_salida);
             comando.Parameters.AddWithValue("finalizado", fichaje.finalizado);
@@ -84,6 +85,31 @@ namespace AEV7_David_Alberto.Clases
 
             return totalFichajes;
         }
+
+        #region Validaciones 
+
+        public static bool ComprobarEntradaFichaje(MaskedTextBox dni)
+        {
+            string nif = dni.Text.Substring(0, 8) + dni.Text[9];
+            string consulta = string.Format("SELECT * FROM fichajes WHERE nif=@nif AND finalizado=0");
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("nif", nif);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+            { // Devuelve true si el fichaje se ha dado de entrada.
+                reader.Close();
+                return true;
+            }
+            else
+            { // Devuelve false si no se ha dado de entrada
+                reader.Close();
+                return false;
+            }
+        }
+
+
+        #endregion
 
     }
 }
