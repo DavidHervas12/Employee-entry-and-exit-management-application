@@ -53,7 +53,7 @@ namespace AEV7_David_Alberto.Clases
         public int DarSalida(Fichaje fich)
         {
             int retorno;
-            String consulta = "UPDATE fichajes SET hora_salida=@hora_salida,finalizado=@fin WHERE nif=@nif AND finalizado=0"; //Se actualizará los que el finalizado sea a false ya que todavía no han terminado
+            string consulta = String.Format("UPDATE fichajes SET hora_salida=@hora_salida,finalizado=@fin WHERE nif=@nif AND finalizado=0"); //Se actualizará los que el finalizado sea a false ya que todavía no han terminado
 
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             comando.Parameters.AddWithValue("hora_salida", fich.hora_salida);

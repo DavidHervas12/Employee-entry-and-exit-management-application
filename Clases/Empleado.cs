@@ -29,8 +29,13 @@ namespace AEV7_David_Alberto.Clases
             nombre = nom;
             apellidos = ape;
             administrador = admin;
-            if (admin) contrasenya = clave;
-            contrasenya = "";
+            if (admin)
+            {
+                contrasenya = clave;
+            } else
+            {
+                contrasenya = "";
+            }
         }
 
         public Empleado()
