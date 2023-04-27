@@ -90,7 +90,7 @@ namespace AEV7_David_Alberto.Clases
             MySqlDataReader reader = comando.ExecuteReader();
             
 
-            if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+            if (reader.HasRows && reader.Read())   // En caso que se hayan registros en el objeto reader
             { // Devuelve false si el empleado está en la base de datos.
                 Empleado emp = new Empleado();
                 emp.nif = reader.GetString(0);

@@ -245,6 +245,7 @@ namespace AEV7_David_Alberto
             // 
             // txtInfo
             // 
+            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInfo.Location = new System.Drawing.Point(20, 16);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";

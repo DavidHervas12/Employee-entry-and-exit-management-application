@@ -63,6 +63,7 @@ namespace AEV7_David_Alberto
 
                                 pbLogo.Visible = false;
                                 txtInfo.Text = $"Entrada Realizada\nDNI:{emp.Nif}\nNombre:{emp.Nombre}--Apellido:{emp.Apellidos}";
+                                
                             }
                             if (resultado > 0)
                             {
