@@ -36,22 +36,24 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(210, 170);
+            this.txtClave.Location = new System.Drawing.Point(154, 181);
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(308, 27);
+            this.txtClave.Size = new System.Drawing.Size(433, 27);
             this.txtClave.TabIndex = 0;
             // 
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(252, 93);
+            this.lblClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClave.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblClave.Location = new System.Drawing.Point(175, 87);
             this.lblClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(270, 20);
+            this.lblClave.Size = new System.Drawing.Size(393, 36);
             this.lblClave.TabIndex = 1;
-            this.lblClave.Text = "Introduce la clave de administrador";
+            this.lblClave.Text = "CLAVE ADMINISTRADOR";
             // 
             // btnCancelar
             // 
@@ -77,6 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(740, 395);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
