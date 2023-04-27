@@ -48,10 +48,17 @@ namespace AEV7_David_Alberto
                     {
                         if (!Empleado.ComprobarEmpleado(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]))
                         {
-                            Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
-                            resultado = f.DarEntrada(f);
+                            if (Fichaje.ComprobarEntradaFichaje(mtbDni))
+                            {
+                                MessageBox.Show("Ya está dado de entrada este fichaje", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            } 
+                            else
+                            {
+                                Fichaje f = new Fichaje(mtbDni.Text.Substring(0, 8) + mtbDni.Text[9]); //Instanciamos un objeto Fichaje para ponerlo en la tabla
+                                resultado = f.DarEntrada(f);
 
-                            MessageBox.Show("Fichaje de entrada realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                MessageBox.Show("Fichaje de entrada realizado con éxito", "Fichaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            }
                             if (resultado > 0)
                             {
                                 mtbDni.Clear();
