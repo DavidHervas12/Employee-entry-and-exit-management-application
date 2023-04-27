@@ -71,150 +71,166 @@ namespace AEV7_David_Alberto
             this.gpbGestionEmpleados.Controls.Add(this.lblGestionEmpleados);
             this.gpbGestionEmpleados.Cursor = System.Windows.Forms.Cursors.Default;
             this.gpbGestionEmpleados.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gpbGestionEmpleados.Location = new System.Drawing.Point(823, 68);
+            this.gpbGestionEmpleados.Location = new System.Drawing.Point(815, 68);
             this.gpbGestionEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.gpbGestionEmpleados.Name = "gpbGestionEmpleados";
             this.gpbGestionEmpleados.Padding = new System.Windows.Forms.Padding(4);
-            this.gpbGestionEmpleados.Size = new System.Drawing.Size(415, 420);
+            this.gpbGestionEmpleados.Size = new System.Drawing.Size(436, 453);
             this.gpbGestionEmpleados.TabIndex = 0;
             this.gpbGestionEmpleados.TabStop = false;
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnEliminar.Location = new System.Drawing.Point(235, 336);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(137, 42);
+            this.btnEliminar.Size = new System.Drawing.Size(153, 55);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnAgregar.Location = new System.Drawing.Point(44, 336);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(137, 42);
+            this.btnAgregar.Size = new System.Drawing.Size(153, 55);
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtContrasenya
             // 
             this.txtContrasenya.Enabled = false;
-            this.txtContrasenya.Location = new System.Drawing.Point(119, 270);
+            this.txtContrasenya.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenya.Location = new System.Drawing.Point(158, 272);
             this.txtContrasenya.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasenya.Name = "txtContrasenya";
             this.txtContrasenya.PasswordChar = '*';
-            this.txtContrasenya.Size = new System.Drawing.Size(231, 22);
+            this.txtContrasenya.Size = new System.Drawing.Size(231, 27);
             this.txtContrasenya.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 273);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.Location = new System.Drawing.Point(37, 275);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 18);
+            this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Contraseña:";
             // 
             // chkAdministrador
             // 
             this.chkAdministrador.AutoSize = true;
-            this.chkAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAdministrador.Location = new System.Drawing.Point(119, 222);
+            this.chkAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAdministrador.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.chkAdministrador.Location = new System.Drawing.Point(158, 224);
             this.chkAdministrador.Margin = new System.Windows.Forms.Padding(4);
             this.chkAdministrador.Name = "chkAdministrador";
-            this.chkAdministrador.Size = new System.Drawing.Size(133, 22);
+            this.chkAdministrador.Size = new System.Drawing.Size(135, 24);
             this.chkAdministrador.TabIndex = 7;
-            this.chkAdministrador.Text = "Administrador/a";
+            this.chkAdministrador.Text = "Administrador";
             this.chkAdministrador.UseVisualStyleBackColor = true;
             this.chkAdministrador.CheckedChanged += new System.EventHandler(this.chkAdministrador_CheckedChanged);
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(119, 171);
+            this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.Location = new System.Drawing.Point(158, 173);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(231, 22);
+            this.txtApellidos.Size = new System.Drawing.Size(231, 27);
             this.txtApellidos.TabIndex = 6;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(119, 128);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(158, 130);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(231, 22);
+            this.txtNombre.Size = new System.Drawing.Size(231, 27);
             this.txtNombre.TabIndex = 5;
             // 
             // txtNIF
             // 
-            this.txtNIF.Location = new System.Drawing.Point(119, 86);
+            this.txtNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIF.Location = new System.Drawing.Point(158, 88);
             this.txtNIF.Margin = new System.Windows.Forms.Padding(4);
             this.txtNIF.Name = "txtNIF";
-            this.txtNIF.Size = new System.Drawing.Size(139, 22);
+            this.txtNIF.Size = new System.Drawing.Size(139, 27);
             this.txtNIF.TabIndex = 4;
             // 
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidos.Location = new System.Drawing.Point(33, 171);
+            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblApellidos.Location = new System.Drawing.Point(56, 176);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(71, 18);
+            this.lblApellidos.Size = new System.Drawing.Size(92, 20);
             this.lblApellidos.TabIndex = 3;
             this.lblApellidos.Text = "Apellidos:";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(40, 130);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblNombre.Location = new System.Drawing.Point(68, 133);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(66, 18);
+            this.lblNombre.Size = new System.Drawing.Size(80, 20);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre:";
             // 
             // lblNIF
             // 
             this.lblNIF.AutoSize = true;
-            this.lblNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNIF.Location = new System.Drawing.Point(72, 92);
+            this.lblNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNIF.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblNIF.Location = new System.Drawing.Point(104, 91);
             this.lblNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNIF.Name = "lblNIF";
-            this.lblNIF.Size = new System.Drawing.Size(35, 18);
+            this.lblNIF.Size = new System.Drawing.Size(44, 20);
             this.lblNIF.TabIndex = 1;
             this.lblNIF.Text = "NIF:";
             // 
             // lblGestionEmpleados
             // 
             this.lblGestionEmpleados.AutoSize = true;
-            this.lblGestionEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionEmpleados.Location = new System.Drawing.Point(109, 37);
+            this.lblGestionEmpleados.Font = new System.Drawing.Font("Liberation Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionEmpleados.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblGestionEmpleados.Location = new System.Drawing.Point(38, 31);
             this.lblGestionEmpleados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGestionEmpleados.Name = "lblGestionEmpleados";
-            this.lblGestionEmpleados.Size = new System.Drawing.Size(220, 20);
+            this.lblGestionEmpleados.Size = new System.Drawing.Size(354, 31);
             this.lblGestionEmpleados.TabIndex = 0;
-            this.lblGestionEmpleados.Text = "Gestión de EMPLEADOS";
+            this.lblGestionEmpleados.Text = "GESTIÓN DE EMPLEADOS";
             // 
             // btnCerrar
             // 
+            this.btnCerrar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnCerrar.Location = new System.Drawing.Point(957, 556);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(137, 42);
+            this.btnCerrar.Size = new System.Drawing.Size(153, 55);
             this.btnCerrar.TabIndex = 12;
             this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // dgvEmpleados
@@ -267,6 +283,7 @@ namespace AEV7_David_Alberto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1264, 694);
             this.Controls.Add(this.lblInfoFichajes);
             this.Controls.Add(this.lblInfoEmpleados);
