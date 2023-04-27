@@ -54,7 +54,7 @@ namespace AEV7_David_Alberto
                         txtNIF.Clear();
                         txtNombre.Clear();
                         txtApellidos.Clear();
-                        chkAdministrador = null;
+                        chkAdministrador.Checked = false;
                         txtContrasenya.Clear();
                     }
 
@@ -189,7 +189,7 @@ namespace AEV7_David_Alberto
         private void chkAdministrador_CheckedChanged(object sender, EventArgs e)
         {
             txtContrasenya.Enabled = chkAdministrador.Checked;
-            txtContrasenya.Clear();
+            txtContrasenya.Text="";
         }
 
 
