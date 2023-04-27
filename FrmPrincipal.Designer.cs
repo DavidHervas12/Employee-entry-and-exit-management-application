@@ -42,11 +42,11 @@ namespace AEV7_David_Alberto
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblReloj = new System.Windows.Forms.Label();
             this.pnlEntrada = new System.Windows.Forms.Panel();
-            this.rtxtInfo = new System.Windows.Forms.RichTextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbSalir = new System.Windows.Forms.PictureBox();
+            this.txtInfo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlEntrada.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -183,35 +183,28 @@ namespace AEV7_David_Alberto
             // 
             // pnlEntrada
             // 
-            this.pnlEntrada.Controls.Add(this.rtxtInfo);
+            this.pnlEntrada.Controls.Add(this.txtInfo);
             this.pnlEntrada.Controls.Add(this.btnVolver);
-            this.pnlEntrada.Location = new System.Drawing.Point(181, 470);
+            this.pnlEntrada.Location = new System.Drawing.Point(56, 211);
             this.pnlEntrada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlEntrada.Name = "pnlEntrada";
-            this.pnlEntrada.Size = new System.Drawing.Size(605, 356);
+            this.pnlEntrada.Size = new System.Drawing.Size(626, 371);
             this.pnlEntrada.TabIndex = 12;
-            // 
-            // rtxtInfo
-            // 
-            this.rtxtInfo.Location = new System.Drawing.Point(91, 34);
-            this.rtxtInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rtxtInfo.Name = "rtxtInfo";
-            this.rtxtInfo.Size = new System.Drawing.Size(444, 212);
-            this.rtxtInfo.TabIndex = 2;
-            this.rtxtInfo.Text = "";
+            this.pnlEntrada.Visible = false;
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnVolver.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.Honeydew;
-            this.btnVolver.Location = new System.Drawing.Point(220, 281);
+            this.btnVolver.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnVolver.Location = new System.Drawing.Point(238, 309);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(151, 49);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // panel1
             // 
@@ -250,6 +243,15 @@ namespace AEV7_David_Alberto
             this.pbSalir.TabStop = false;
             this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
             // 
+            // txtInfo
+            // 
+            this.txtInfo.Location = new System.Drawing.Point(20, 16);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(586, 278);
+            this.txtInfo.TabIndex = 1;
+            this.txtInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,10 +268,10 @@ namespace AEV7_David_Alberto
             this.Name = "FrmPrincipal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Entrada";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlEntrada.ResumeLayout(false);
+            this.pnlEntrada.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -292,11 +294,11 @@ namespace AEV7_David_Alberto
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Panel pnlEntrada;
-        private System.Windows.Forms.RichTextBox rtxtInfo;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbSalir;
+        private System.Windows.Forms.TextBox txtInfo;
     }
 }
 

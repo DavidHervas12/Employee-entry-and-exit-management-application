@@ -29,13 +29,8 @@ namespace AEV7_David_Alberto.Clases
             nombre = nom;
             apellidos = ape;
             administrador = admin;
-            if (admin)
-            {
-                contrasenya = clave;
-            } else
-            {
-                contrasenya = "";
-            }
+            if (admin) contrasenya = clave;
+            else contrasenya = "";
         }
 
         public Empleado()
@@ -61,7 +56,7 @@ namespace AEV7_David_Alberto.Clases
             return retorno;
         }
 
-        public static List<Empleado> BuscarEmpleado(string consulta)
+        public static List<Empleado> VerEmpleadosTotales(string consulta)
         {
             List<Empleado> listaEmpleados = new List<Empleado>();
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -85,6 +80,32 @@ namespace AEV7_David_Alberto.Clases
             }
             // devolvemos la lista cargada con los usuarios.
             return listaEmpleados;
+        }
+
+        public static Empleado BuscarEmpleado(string dni)
+        {
+            string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("nif", dni);
+            MySqlDataReader reader = comando.ExecuteReader();
+            
+
+            if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+            { // Devuelve false si el empleado está en la base de datos.
+                Empleado emp = new Empleado();
+                emp.nif = reader.GetString(0);
+                emp.nombre = reader.GetString(1);
+                emp.apellidos = reader.GetString(2);
+                emp.administrador = reader.GetBoolean(3);
+                emp.contrasenya = reader.GetString(4);
+                reader.Close();
+                return emp;
+            }
+            else
+            { // Devuelve true si el empleado no está en la base de datos.
+                reader.Close();
+                return null;
+            }
         }
 
         public static int EliminaEmpleado(TextBox nif)
