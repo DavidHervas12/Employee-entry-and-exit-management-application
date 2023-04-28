@@ -15,22 +15,22 @@ namespace AEV7_David_Alberto.Clases
         private string nombre;
         private string apellidos;
         private bool administrador = false;
-        private string contrasenya;
+        private string clave;
 
         public string Nif { get { return nif; } set { nif = value; } }
         public string Nombre { get { return nombre; } set { nombre = value; } }
         public string Apellidos { get { return apellidos; } set { apellidos = value; } }
         public bool Administrador { get { return administrador; } set { administrador = value; } }
-        public string Contrasenya { get { return contrasenya; } set { contrasenya = value; } }
+        public string Clave { get { return clave; } set { clave = value; } }
 
-        public Empleado(string dni, string nom, string ape, bool admin, string clave)
+        public Empleado(string dni, string nom, string ape, bool admin, string cl)
         {
             nif = dni;
             nombre = nom;
             apellidos = ape;
             administrador = admin;
-            if (admin) contrasenya = clave;
-            else contrasenya = "";
+            if (admin) clave = cl;
+            else clave = "";
         }
 
         public Empleado()
@@ -50,7 +50,7 @@ namespace AEV7_David_Alberto.Clases
             comando.Parameters.AddWithValue("nom", emp.nombre);
             comando.Parameters.AddWithValue("ape", emp.apellidos);
             comando.Parameters.AddWithValue("admin", emp.administrador);
-            comando.Parameters.AddWithValue("clave", emp.contrasenya);
+            comando.Parameters.AddWithValue("clave", emp.clave);
             retorno = comando.ExecuteNonQuery(); 
 
             return retorno;
@@ -73,7 +73,7 @@ namespace AEV7_David_Alberto.Clases
                     emp.nombre = reader.GetString(1);
                     emp.apellidos = reader.GetString(2);
                     emp.administrador = reader.GetBoolean(3);
-                    emp.contrasenya = reader.GetString(4);
+                    emp.clave = reader.GetString(4);
 
                     listaEmpleados.Add(emp);
                 }
@@ -97,7 +97,7 @@ namespace AEV7_David_Alberto.Clases
                 emp.nombre = reader.GetString(1);
                 emp.apellidos = reader.GetString(2);
                 emp.administrador = reader.GetBoolean(3);
-                emp.contrasenya = reader.GetString(4);
+                emp.clave = reader.GetString(4);
                 reader.Close();
                 return emp;
             }
