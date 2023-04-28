@@ -166,6 +166,7 @@ namespace AEV7_David_Alberto
 
         private void btnPresencia_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             try
             {
                 if (ConexionBD.Conexion != null)
@@ -266,37 +267,35 @@ namespace AEV7_David_Alberto
 
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
-            if (ValidarNIFBlanco())
+            errorProvider.Clear();
+            try
             {
-                try
+                if (ConexionBD.Conexion != null)
                 {
-                    if (ConexionBD.Conexion != null)
+                    ConexionBD.AbrirConexion();
+
+                    frmPermanencia = new FrmPermanencia();
+                    frmPermanencia.Show();
+
+                    if (frmPermanencia != null)
                     {
-                        ConexionBD.AbrirConexion();
-
-                        frmPermanencia = new FrmPermanencia();
-                        frmPermanencia.Show();
-
-                        if (frmPermanencia != null)
-                        {
-                            frmPermanencia.Activate();
-                        }
-
-                        ConexionBD.CerrarConexion();
+                        frmPermanencia.Activate();
                     }
-                    else
-                    {
-                        MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-                }
-                finally
-                {
+
                     ConexionBD.CerrarConexion();
                 }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
             }
         }
 
