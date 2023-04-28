@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.dgvInformacionFichajes = new System.Windows.Forms.DataGridView();
             this.dgvcFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,24 +37,30 @@
             this.lblHoraSaiida = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaInicial = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.lblNIF = new System.Windows.Forms.Label();
+            this.txtNIF = new System.Windows.Forms.TextBox();
+            this.errorProvFichajes = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvFichajes)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvInformacionFichajes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInformacionFichajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInformacionFichajes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvcFecha,
             this.dgvHoraEntrada,
             this.dgvcHoraSalida,
             this.dgvcDuracion});
-            this.dataGridView1.Location = new System.Drawing.Point(116, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(555, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvInformacionFichajes.Location = new System.Drawing.Point(87, 180);
+            this.dgvInformacionFichajes.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvInformacionFichajes.Name = "dgvInformacionFichajes";
+            this.dgvInformacionFichajes.RowHeadersWidth = 51;
+            this.dgvInformacionFichajes.RowTemplate.Height = 24;
+            this.dgvInformacionFichajes.Size = new System.Drawing.Size(416, 122);
+            this.dgvInformacionFichajes.TabIndex = 2;
             // 
             // dgvcFecha
             // 
@@ -87,9 +94,10 @@
             // 
             this.lblHoraSaiida.AutoSize = true;
             this.lblHoraSaiida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraSaiida.Location = new System.Drawing.Point(90, 69);
+            this.lblHoraSaiida.Location = new System.Drawing.Point(192, 80);
+            this.lblHoraSaiida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHoraSaiida.Name = "lblHoraSaiida";
-            this.lblHoraSaiida.Size = new System.Drawing.Size(167, 24);
+            this.lblHoraSaiida.Size = new System.Drawing.Size(133, 18);
             this.lblHoraSaiida.TabIndex = 4;
             this.lblHoraSaiida.Text = "FECHA INICIAL: ";
             // 
@@ -97,9 +105,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(93, 123);
+            this.label2.Location = new System.Drawing.Point(193, 121);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 24);
+            this.label2.Size = new System.Drawing.Size(123, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "FECHA FINAL: ";
             // 
@@ -108,42 +117,83 @@
             this.dtpFechaInicial.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicial.Location = new System.Drawing.Point(276, 66);
+            this.dtpFechaInicial.Location = new System.Drawing.Point(331, 78);
+            this.dtpFechaInicial.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaInicial.Name = "dtpFechaInicial";
-            this.dtpFechaInicial.Size = new System.Drawing.Size(125, 28);
+            this.dtpFechaInicial.Size = new System.Drawing.Size(95, 24);
             this.dtpFechaInicial.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dtpFechaFinal
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(276, 121);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 28);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(330, 119);
+            this.dtpFechaFinal.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(95, 24);
+            this.dtpFechaFinal.TabIndex = 8;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnFiltrar.Location = new System.Drawing.Point(247, 335);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(110, 33);
+            this.btnFiltrar.TabIndex = 9;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // lblNIF
+            // 
+            this.lblNIF.AutoSize = true;
+            this.lblNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNIF.Location = new System.Drawing.Point(207, 36);
+            this.lblNIF.Name = "lblNIF";
+            this.lblNIF.Size = new System.Drawing.Size(39, 18);
+            this.lblNIF.TabIndex = 10;
+            this.lblNIF.Text = "NIF:";
+            // 
+            // txtNIF
+            // 
+            this.txtNIF.Location = new System.Drawing.Point(252, 36);
+            this.txtNIF.Name = "txtNIF";
+            this.txtNIF.Size = new System.Drawing.Size(175, 20);
+            this.txtNIF.TabIndex = 11;
+            // 
+            // errorProvFichajes
+            // 
+            this.errorProvFichajes.ContainerControl = this;
             // 
             // FrmPermanencia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(822, 468);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(616, 380);
+            this.Controls.Add(this.txtNIF);
+            this.Controls.Add(this.lblNIF);
+            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.dtpFechaFinal);
             this.Controls.Add(this.dtpFechaInicial);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHoraSaiida);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvInformacionFichajes);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPermanencia";
             this.Text = "FrmPermanencia";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvFichajes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvInformacionFichajes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvHoraEntrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcHoraSalida;
@@ -151,6 +201,10 @@
         private System.Windows.Forms.Label lblHoraSaiida;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpFechaInicial;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Label lblNIF;
+        private System.Windows.Forms.TextBox txtNIF;
+        private System.Windows.Forms.ErrorProvider errorProvFichajes;
     }
 }

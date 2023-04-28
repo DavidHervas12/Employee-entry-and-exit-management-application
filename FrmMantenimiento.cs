@@ -157,6 +157,7 @@ namespace AEV7_David_Alberto
         private bool ValidaNifErrorProv(TextBox dni)
         {
             bool ok = true;
+            errorProv.Clear();
             if (!Empleado.ValidaNif(dni))
             {
                 ok = false;
@@ -174,6 +175,7 @@ namespace AEV7_David_Alberto
         private bool ValidarNIFNoExistente(TextBox nif)
         {
             bool ok = true;
+            errorProv.Clear();
             if (Empleado.ComprobarEmpleado(nif.Text))
             {
                 ok = false;

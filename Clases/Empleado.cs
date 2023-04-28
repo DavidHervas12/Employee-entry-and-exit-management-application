@@ -199,7 +199,6 @@ namespace AEV7_David_Alberto.Clases
             int resto;
             string letraCorrecta;
 
-
             int num = int.Parse(dni.Text.Substring(0, 8));
             string letraDato = dni.Text[8].ToString();
 
@@ -215,7 +214,6 @@ namespace AEV7_David_Alberto.Clases
             string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
             int resto;
             string letraCorrecta;
-
 
             int num = int.Parse(dni.Text.Substring(0, 8));
             string letraDato = dni.Text[9].ToString();

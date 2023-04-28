@@ -32,6 +32,10 @@ namespace AEV7_David_Alberto.Clases
             finalizado = false;
         }
 
+        public Fichaje()
+        {
+        }
+
         public int DarEntrada(Fichaje fichaje)
         {
             int retorno;
@@ -74,7 +78,6 @@ namespace AEV7_David_Alberto.Clases
             while (reader.Read())
             {
                 Fichaje f = new Fichaje(reader.GetString(0));
-
                 f.fecha = reader.GetDateTime(1);
                 f.hora_entrada = Convert.ToDateTime(reader["hora_entrada"]);
                 f.hora_salida = Convert.ToDateTime(reader["hora_salida"]);
@@ -84,6 +87,35 @@ namespace AEV7_David_Alberto.Clases
             }
             reader.Close();
             return totalFichajes;
+        }
+
+        public static List<Fichaje> ListaFechasFichajes(string nif, DateTime fInicial, DateTime fFinal)
+        {
+            List<Fichaje> lista = new List<Fichaje>();
+            string consulta = String.Format("SELECT * FROM fichajes WHERE nif=@nif AND fecha=@fInicial AND fecha=@fFinal");
+
+            // Creo el objeto command al cual le paso la consulta y la conexión
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+            comando.Parameters.AddWithValue("nif", nif);
+            comando.Parameters.AddWithValue("fInicial", fInicial.ToString("yyyy/MM/dd"));
+            comando.Parameters.AddWithValue("fFinal", fInicial.ToString("yyyy/MM/dd"));
+
+            // Ejecuto el comando y recibo en un DataReader la lista de registros seleccionados.
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+            {
+                // Recorremos el reader y cargamos la lista de fichajes desde una fecha a otra
+                while (reader.Read())
+                {
+                    Fichaje fich = new Fichaje();
+                    fich.fecha = reader.GetDateTime(1);
+                    fich.hora_entrada = Convert.ToDateTime(reader["hora_entrada"]);
+                    fich.hora_salida = Convert.ToDateTime(reader["hora_salida"]);
+                    lista.Add(fich);
+                }
+            }
+            return lista;
         }
 
         #region Validaciones 
@@ -107,8 +139,6 @@ namespace AEV7_David_Alberto.Clases
                 return false;
             }
         }
-
-
         #endregion
 
     }
