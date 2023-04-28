@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvInformacionFichajes = new System.Windows.Forms.DataGridView();
-            this.dgvcFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvHoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHoraSaiida = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaInicial = new System.Windows.Forms.DateTimePicker();
@@ -42,6 +38,12 @@
             this.lblNIF = new System.Windows.Forms.Label();
             this.txtNIF = new System.Windows.Forms.TextBox();
             this.errorProvFichajes = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvcFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvHoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvFichajes)).BeginInit();
             this.SuspendLayout();
@@ -54,13 +56,92 @@
             this.dgvHoraEntrada,
             this.dgvcHoraSalida,
             this.dgvcDuracion});
-            this.dgvInformacionFichajes.Location = new System.Drawing.Point(87, 180);
-            this.dgvInformacionFichajes.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvInformacionFichajes.Location = new System.Drawing.Point(76, 215);
+            this.dgvInformacionFichajes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvInformacionFichajes.Name = "dgvInformacionFichajes";
             this.dgvInformacionFichajes.RowHeadersWidth = 51;
             this.dgvInformacionFichajes.RowTemplate.Height = 24;
-            this.dgvInformacionFichajes.Size = new System.Drawing.Size(416, 122);
+            this.dgvInformacionFichajes.Size = new System.Drawing.Size(655, 165);
             this.dgvInformacionFichajes.TabIndex = 2;
+            // 
+            // lblHoraSaiida
+            // 
+            this.lblHoraSaiida.AutoSize = true;
+            this.lblHoraSaiida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoraSaiida.Location = new System.Drawing.Point(114, 80);
+            this.lblHoraSaiida.Name = "lblHoraSaiida";
+            this.lblHoraSaiida.Size = new System.Drawing.Size(161, 22);
+            this.lblHoraSaiida.TabIndex = 4;
+            this.lblHoraSaiida.Text = "FECHA INICIAL: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(115, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 22);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "FECHA FINAL: ";
+            // 
+            // dtpFechaInicial
+            // 
+            this.dtpFechaInicial.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicial.Location = new System.Drawing.Point(299, 78);
+            this.dtpFechaInicial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaInicial.Name = "dtpFechaInicial";
+            this.dtpFechaInicial.Size = new System.Drawing.Size(125, 28);
+            this.dtpFechaInicial.TabIndex = 7;
+            // 
+            // dtpFechaFinal
+            // 
+            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(298, 128);
+            this.dtpFechaFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(125, 28);
+            this.dtpFechaFinal.TabIndex = 8;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnFiltrar.Location = new System.Drawing.Point(329, 412);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(147, 41);
+            this.btnFiltrar.TabIndex = 9;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // lblNIF
+            // 
+            this.lblNIF.AutoSize = true;
+            this.lblNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNIF.Location = new System.Drawing.Point(134, 26);
+            this.lblNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNIF.Name = "lblNIF";
+            this.lblNIF.Size = new System.Drawing.Size(49, 24);
+            this.lblNIF.TabIndex = 10;
+            this.lblNIF.Text = "NIF:";
+            // 
+            // txtNIF
+            // 
+            this.txtNIF.Location = new System.Drawing.Point(194, 26);
+            this.txtNIF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNIF.Name = "txtNIF";
+            this.txtNIF.Size = new System.Drawing.Size(232, 22);
+            this.txtNIF.TabIndex = 11;
+            // 
+            // errorProvFichajes
+            // 
+            this.errorProvFichajes.ContainerControl = this;
             // 
             // dgvcFecha
             // 
@@ -88,92 +169,35 @@
             this.dgvcDuracion.HeaderText = "Duracion";
             this.dgvcDuracion.MinimumWidth = 6;
             this.dgvcDuracion.Name = "dgvcDuracion";
-            this.dgvcDuracion.Width = 125;
+            this.dgvcDuracion.Width = 75;
             // 
-            // lblHoraSaiida
+            // lblTotal
             // 
-            this.lblHoraSaiida.AutoSize = true;
-            this.lblHoraSaiida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraSaiida.Location = new System.Drawing.Point(192, 80);
-            this.lblHoraSaiida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHoraSaiida.Name = "lblHoraSaiida";
-            this.lblHoraSaiida.Size = new System.Drawing.Size(133, 18);
-            this.lblHoraSaiida.TabIndex = 4;
-            this.lblHoraSaiida.Text = "FECHA INICIAL: ";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(513, 33);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(68, 25);
+            this.lblTotal.TabIndex = 12;
+            this.lblTotal.Text = "Total:";
             // 
-            // label2
+            // txtTotal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(193, 121);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 18);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "FECHA FINAL: ";
-            // 
-            // dtpFechaInicial
-            // 
-            this.dtpFechaInicial.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicial.Location = new System.Drawing.Point(331, 78);
-            this.dtpFechaInicial.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaInicial.Name = "dtpFechaInicial";
-            this.dtpFechaInicial.Size = new System.Drawing.Size(95, 24);
-            this.dtpFechaInicial.TabIndex = 7;
-            // 
-            // dtpFechaFinal
-            // 
-            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFinal.Location = new System.Drawing.Point(330, 119);
-            this.dtpFechaFinal.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaFinal.Name = "dtpFechaFinal";
-            this.dtpFechaFinal.Size = new System.Drawing.Size(95, 24);
-            this.dtpFechaFinal.TabIndex = 8;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.ForeColor = System.Drawing.Color.LightCyan;
-            this.btnFiltrar.Location = new System.Drawing.Point(247, 335);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(110, 33);
-            this.btnFiltrar.TabIndex = 9;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // lblNIF
-            // 
-            this.lblNIF.AutoSize = true;
-            this.lblNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNIF.Location = new System.Drawing.Point(207, 36);
-            this.lblNIF.Name = "lblNIF";
-            this.lblNIF.Size = new System.Drawing.Size(39, 18);
-            this.lblNIF.TabIndex = 10;
-            this.lblNIF.Text = "NIF:";
-            // 
-            // txtNIF
-            // 
-            this.txtNIF.Location = new System.Drawing.Point(252, 36);
-            this.txtNIF.Name = "txtNIF";
-            this.txtNIF.Size = new System.Drawing.Size(175, 20);
-            this.txtNIF.TabIndex = 11;
-            // 
-            // errorProvFichajes
-            // 
-            this.errorProvFichajes.ContainerControl = this;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(587, 30);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(100, 30);
+            this.txtTotal.TabIndex = 13;
             // 
             // FrmPermanencia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(616, 380);
+            this.ClientSize = new System.Drawing.Size(821, 468);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.txtNIF);
             this.Controls.Add(this.lblNIF);
             this.Controls.Add(this.btnFiltrar);
@@ -182,7 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHoraSaiida);
             this.Controls.Add(this.dgvInformacionFichajes);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPermanencia";
             this.Text = "FrmPermanencia";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).EndInit();
@@ -194,10 +218,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvInformacionFichajes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvHoraEntrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcHoraSalida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcDuracion;
         private System.Windows.Forms.Label lblHoraSaiida;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpFechaInicial;
@@ -206,5 +226,11 @@
         private System.Windows.Forms.Label lblNIF;
         private System.Windows.Forms.TextBox txtNIF;
         private System.Windows.Forms.ErrorProvider errorProvFichajes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvHoraEntrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcHoraSalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcDuracion;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

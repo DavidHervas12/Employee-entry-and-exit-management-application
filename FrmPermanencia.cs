@@ -26,10 +26,8 @@ namespace AEV7_David_Alberto
 
                 if (ValidarDatos())
                 {
-                    dgvInformacionFichajes.DataSource = Fichaje.ListaFechasFichajes(txtNIF.Text, dtpFechaInicial.Value.Date, dtpFechaFinal.Value.Date);
-                    dgvInformacionFichajes.Columns["Fecha"].DataPropertyName = "Fecha";
-                    dgvInformacionFichajes.Columns["Hora_Entrada"].DataPropertyName = "Hora_Entrada";
-                    dgvInformacionFichajes.Columns["Hora_Salida"].DataPropertyName = "Hora_Salida";
+                    int duracionTotal = CargaDataGrid(Fichaje.ListaFechasFichajes(txtNIF.Text, dtpFechaInicial.Value, dtpFechaFinal.Value));
+                    txtTotal.Text = duracionTotal.ToString();
                 }
                 ConexionBD.CerrarConexion();
             }
@@ -39,6 +37,24 @@ namespace AEV7_David_Alberto
             }
         }
 
+        private int CargaDataGrid(List<Fichaje> lista)
+        {
+            dgvInformacionFichajes.Rows.Clear();
+            int total = 0;
+            for (int i = 0; i < lista.Count; i++)
+            {
+                total += CalculaDuracion(lista[i].Hora_entrada, lista[i].Hora_salida);
+                dgvInformacionFichajes.Rows.Add(lista[i].Fecha.Date, lista[i].Hora_entrada, lista[i].Hora_salida, 
+                    CalculaDuracion(lista[i].Hora_entrada, lista[i].Hora_salida));
+            }
+            return total;
+        }
+
+        private int CalculaDuracion(DateTime he, DateTime hs)
+        {
+            TimeSpan ht = hs.Subtract(he);
+            return ht.Minutes;
+        }
 
         #region Validaciones
         private bool ValidarDatos()

@@ -92,13 +92,13 @@ namespace AEV7_David_Alberto.Clases
         public static List<Fichaje> ListaFechasFichajes(string nif, DateTime fInicial, DateTime fFinal)
         {
             List<Fichaje> lista = new List<Fichaje>();
-            string consulta = String.Format("SELECT * FROM fichajes WHERE nif=@nif AND fecha=@fInicial AND fecha=@fFinal");
+            string consulta = String.Format("SELECT * FROM fichajes WHERE nif=@nif AND fecha>=@fInicial AND fecha<=@fFinal");
 
             // Creo el objeto command al cual le paso la consulta y la conexión
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             comando.Parameters.AddWithValue("nif", nif);
-            comando.Parameters.AddWithValue("fInicial", fInicial.ToString("yyyy/MM/dd"));
-            comando.Parameters.AddWithValue("fFinal", fInicial.ToString("yyyy/MM/dd"));
+            comando.Parameters.AddWithValue("fInicial", fInicial);
+            comando.Parameters.AddWithValue("fFinal", fFinal);
 
             // Ejecuto el comando y recibo en un DataReader la lista de registros seleccionados.
             MySqlDataReader reader = comando.ExecuteReader();
@@ -112,6 +112,7 @@ namespace AEV7_David_Alberto.Clases
                     fich.fecha = reader.GetDateTime(1);
                     fich.hora_entrada = Convert.ToDateTime(reader["hora_entrada"]);
                     fich.hora_salida = Convert.ToDateTime(reader["hora_salida"]);
+                    fich.finalizado = reader.GetBoolean(4);
                     lista.Add(fich);
                 }
             }
