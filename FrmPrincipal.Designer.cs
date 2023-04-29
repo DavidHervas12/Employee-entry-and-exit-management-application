@@ -194,7 +194,7 @@ namespace AEV7_David_Alberto
             this.pnlEntrada.Location = new System.Drawing.Point(42, 171);
             this.pnlEntrada.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEntrada.Name = "pnlEntrada";
-            this.pnlEntrada.Size = new System.Drawing.Size(470, 301);
+            this.pnlEntrada.Size = new System.Drawing.Size(482, 301);
             this.pnlEntrada.TabIndex = 12;
             this.pnlEntrada.Visible = false;
             // 
@@ -205,7 +205,7 @@ namespace AEV7_David_Alberto
             this.txtInfo.Margin = new System.Windows.Forms.Padding(2);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(440, 227);
+            this.txtInfo.Size = new System.Drawing.Size(455, 227);
             this.txtInfo.TabIndex = 1;
             this.txtInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

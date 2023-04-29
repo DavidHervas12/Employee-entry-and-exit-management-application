@@ -181,7 +181,7 @@ namespace AEV7_David_Alberto
                     foreach (Fichaje f in actuales)
                     {
                         Empleado emp = Empleado.BuscarEmpleado(f.NifEmpleado);
-                        txtInfo.Text += $"\r\nDNI:{emp.Nif} -- {emp.Nombre} -- {emp.Apellidos}";
+                        txtInfo.Text += $"\r\n{emp.Nombre} -- {emp.Apellidos} -- {f.Hora_entrada.ToString("HH:mm:ss")}";
                     }
 
                     ConexionBD.CerrarConexion();
