@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPermanencia));
             this.dgvInformacionFichajes = new System.Windows.Forms.DataGridView();
             this.dgvcFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +44,9 @@
             this.errorProvFichajes = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.pbSalir = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvFichajes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvInformacionFichajes
@@ -144,7 +142,7 @@
             this.btnFiltrar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.LightCyan;
-            this.btnFiltrar.Location = new System.Drawing.Point(249, 346);
+            this.btnFiltrar.Location = new System.Drawing.Point(155, 346);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(110, 33);
             this.btnFiltrar.TabIndex = 9;
@@ -194,18 +192,18 @@
             this.txtTotal.Size = new System.Drawing.Size(76, 26);
             this.txtTotal.TabIndex = 13;
             // 
-            // pbSalir
+            // btnSalir
             // 
-            this.pbSalir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
-            this.pbSalir.Location = new System.Drawing.Point(575, 9);
-            this.pbSalir.Margin = new System.Windows.Forms.Padding(2);
-            this.pbSalir.Name = "pbSalir";
-            this.pbSalir.Size = new System.Drawing.Size(30, 30);
-            this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSalir.TabIndex = 18;
-            this.pbSalir.TabStop = false;
-            this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
+            this.btnSalir.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnSalir.Location = new System.Drawing.Point(344, 346);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(110, 33);
+            this.btnSalir.TabIndex = 14;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmPermanencia
             // 
@@ -213,7 +211,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(616, 391);
-            this.Controls.Add(this.pbSalir);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.txtNIF);
@@ -229,7 +227,6 @@
             this.Text = "FrmPermanencia";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvFichajes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +248,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcDuracion;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.PictureBox pbSalir;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

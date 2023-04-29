@@ -104,7 +104,7 @@ namespace AEV7_David_Alberto
             #endregion
         }
 
-        private void pbSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
