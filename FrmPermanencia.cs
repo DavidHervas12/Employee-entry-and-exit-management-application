@@ -24,7 +24,7 @@ namespace AEV7_David_Alberto
             {
                 ConexionBD.AbrirConexion();
 
-                if (ValidarDatos())
+                if (ValidarDatos() && ValidarEmpleadoExistente())
                 {
                     int duracionTotal = CargaDataGrid(Fichaje.ListaFechasFichajes(txtNIF.Text, dtpFechaInicial.Value, dtpFechaFinal.Value));
                     txtTotal.Text = duracionTotal.ToString();  //Duración máximo que se almacena en el TextBox gracias al cargadatagrid 
@@ -48,7 +48,7 @@ namespace AEV7_David_Alberto
             for (int i = 0; i < lista.Count; i++)
             {
                 total += CalculaDuracion(lista[i].Hora_entrada, lista[i].Hora_salida); //Con una variable te aumenta la cantidad de duración total
-                dgvInformacionFichajes.Rows.Add(lista[i].Fecha.ToString("dd/MM/yyyy"), lista[i].Hora_entrada, lista[i].Hora_salida, 
+                dgvInformacionFichajes.Rows.Add(lista[i].Fecha.ToString("dd/MM/yyyy"), lista[i].Hora_entrada, lista[i].Hora_salida,
                     CalculaDuracion(lista[i].Hora_entrada, lista[i].Hora_salida));
             }
             return total;
@@ -63,7 +63,7 @@ namespace AEV7_David_Alberto
         private int CalculaDuracion(DateTime he, DateTime hs)
         {
             TimeSpan ht = hs.Subtract(he);
-            return (ht.Hours*60) + ht.Minutes;
+            return (ht.Hours * 60) + ht.Minutes;
         }
 
         #region Validaciones
@@ -78,12 +78,6 @@ namespace AEV7_David_Alberto
                 errorProvFichajes.SetError(txtNIF, "El dni no es válido");
             }
 
-            if (Empleado.ComprobarEmpleado(txtNIF.Text))
-            {
-                ok = false;
-                errorProvFichajes.SetError(txtNIF, "DNI del empleado suministrado no existente");
-            }
-
             int resultado = dtpFechaInicial.Value.CompareTo(dtpFechaFinal.Value);
             if (resultado == 1)
             {
@@ -93,6 +87,27 @@ namespace AEV7_David_Alberto
 
             return ok;
         }
-        #endregion
+
+        private bool ValidarEmpleadoExistente()
+        {
+            bool ok = true;
+            errorProvFichajes.Clear();
+
+            if (Empleado.ComprobarEmpleado(txtNIF.Text))
+            {
+                ok = false;
+                errorProvFichajes.SetError(txtNIF, "DNI del empleado suministrado no existente");
+            }
+
+            return ok;
+
+            #endregion
+        }
+
+        private void pbSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
+
