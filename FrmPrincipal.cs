@@ -215,15 +215,8 @@ namespace AEV7_David_Alberto
                         {
                             if (Empleado.ComprobarAdministrador(mtbDni))
                             {
-                                if (frmClave == null) //Si el formulario es nulo y no se ha instanciado el objeto se hará uno nuevo, sino se activará el mismo
-                                {
                                     frmClave = new FrmClave();
                                     frmClave.Show();
-                                }
-                                else
-                                {
-                                    frmClave.Activate();
-                                }
                             }
                         }
                         else
