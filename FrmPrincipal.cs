@@ -267,17 +267,9 @@ namespace AEV7_David_Alberto
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
-
-                    if (frmPermanencia == null) //Si el formulario es nulo y no se ha instanciado el objeto se hará uno nuevo, sino se activará el mismo
-                    {
-                        frmPermanencia = new FrmPermanencia();
-                        frmPermanencia.Show();
-                    }
-                    else
-                    {
-                        frmPermanencia.Activate();
-                    }
-
+                    
+                    frmPermanencia = new FrmPermanencia();
+                    frmPermanencia.Show();
                     ConexionBD.CerrarConexion();
                 }
                 else
