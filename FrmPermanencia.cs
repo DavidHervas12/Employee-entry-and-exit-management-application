@@ -78,6 +78,12 @@ namespace AEV7_David_Alberto
                 errorProvFichajes.SetError(txtNIF, "El dni no es válido");
             }
 
+            if (txtNIF.Text == "")
+            {
+                ok = false;
+                errorProvFichajes.SetError(txtNIF, "DNI introducido incompleto");
+            }
+
             int resultado = dtpFechaInicial.Value.CompareTo(dtpFechaFinal.Value);
             if (resultado == 1)
             {
