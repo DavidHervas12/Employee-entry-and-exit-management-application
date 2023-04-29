@@ -60,7 +60,7 @@
             this.dgvcHoraSalida,
             this.dgvcDuracion});
             this.dgvInformacionFichajes.Location = new System.Drawing.Point(57, 189);
-            this.dgvInformacionFichajes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvInformacionFichajes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInformacionFichajes.Name = "dgvInformacionFichajes";
             this.dgvInformacionFichajes.RowHeadersWidth = 51;
             this.dgvInformacionFichajes.RowTemplate.Height = 24;
@@ -123,7 +123,7 @@
             this.dtpFechaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicial.Location = new System.Drawing.Point(224, 77);
-            this.dtpFechaInicial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaInicial.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaInicial.Name = "dtpFechaInicial";
             this.dtpFechaInicial.Size = new System.Drawing.Size(95, 24);
             this.dtpFechaInicial.TabIndex = 7;
@@ -134,7 +134,7 @@
             this.dtpFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFinal.Location = new System.Drawing.Point(224, 118);
-            this.dtpFechaFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaFinal.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
             this.dtpFechaFinal.Size = new System.Drawing.Size(95, 24);
             this.dtpFechaFinal.TabIndex = 8;
@@ -188,7 +188,7 @@
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(440, 38);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(76, 26);
@@ -224,7 +224,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHoraSaiida);
             this.Controls.Add(this.dgvInformacionFichajes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPermanencia";
             this.Text = "FrmPermanencia";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).EndInit();

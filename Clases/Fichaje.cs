@@ -22,7 +22,6 @@ namespace AEV7_David_Alberto.Clases
         public DateTime Hora_salida { get { return hora_salida; } set { hora_salida = value; } }
         public bool Finalizado { get { return finalizado; } set { finalizado = value; } }
 
-
         public Fichaje(string nif)
         {
             nifEmpleado = nif;

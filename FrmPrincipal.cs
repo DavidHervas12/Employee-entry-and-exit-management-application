@@ -53,7 +53,7 @@ namespace AEV7_David_Alberto
                             {
                                 if (Fichaje.ComprobarEntradaFichaje(mtbDni))
                                 {
-                                    MessageBox.Show("Ya está dado de entrada este fichaje", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Ya está dado de entrada este fichaje", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                                 else
                                 {
@@ -75,7 +75,7 @@ namespace AEV7_David_Alberto
                             }
                             else
                             {
-                                MessageBox.Show("El empleado no está en la base de datos por lo tanto, no se puede realizar el fichaje", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("NIF del empleado introducido no existente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else

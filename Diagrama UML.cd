@@ -8,17 +8,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AEV7_David_Alberto.Clases.Empleado">
-    <Position X="8.25" Y="0.5" Width="2.5" />
+    <Position X="8" Y="0.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAUABSEACCEgAIAgAAAAAAAgAAAAIEAAAABAIA=</HashCode>
+      <HashCode>AAAAAAAUAASEACCEgAIAgAAAAAAAgAAAAIEQAAABEIA=</HashCode>
       <FileName>Clases\Empleado.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AEV7_David_Alberto.Clases.ConexionBD">
-    <Position X="5" Y="1" Width="1.75" />
+    <Position X="5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAEAQAAAAAAAgAAAAAAAAAAAAAACAAAAAAAAAAEAAA=</HashCode>
       <FileName>Clases\ConexionBD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AEV7_David_Alberto.FrmMantenimiento">
+    <Position X="11.75" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CADTgAIAAOCRABACAACAABAiCCBAQAAgABACiAAAAAI=</HashCode>
+      <FileName>FrmMantenimiento.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
