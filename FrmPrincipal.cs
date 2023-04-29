@@ -211,15 +211,16 @@ namespace AEV7_David_Alberto
                     {
                         ConexionBD.AbrirConexion();
 
-
                         if (Empleado.ValidaNif(mtbDni))
                         {
                             if (Empleado.ComprobarAdministrador(mtbDni))
                             {
-                                frmClave = new FrmClave();
-                                frmClave.Show();
-
-                                if (frmClave != null)
+                                if (frmClave == null) //Si el formulario es nulo y no se ha instanciado el objeto se hará uno nuevo, sino se activará el mismo
+                                {
+                                    frmClave = new FrmClave();
+                                    frmClave.Show();
+                                }
+                                else
                                 {
                                     frmClave.Activate();
                                 }
@@ -274,10 +275,12 @@ namespace AEV7_David_Alberto
                 {
                     ConexionBD.AbrirConexion();
 
-                    frmPermanencia = new FrmPermanencia();
-                    frmPermanencia.Show();
-
-                    if (frmPermanencia != null)
+                    if (frmPermanencia == null) //Si el formulario es nulo y no se ha instanciado el objeto se hará uno nuevo, sino se activará el mismo
+                    {
+                        frmPermanencia = new FrmPermanencia();
+                        frmPermanencia.Show();
+                    }
+                    else
                     {
                         frmPermanencia.Activate();
                     }
