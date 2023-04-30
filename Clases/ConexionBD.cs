@@ -16,6 +16,9 @@ namespace AEV7_David_Alberto.Clases
 
         private ConexionBD () { }
 
+        /// <summary>
+        /// Propidad para el acceso de lectura (GET) a la conexión.
+        /// </summary>
         public static MySqlConnection Conexion
         {
             get
@@ -31,6 +34,10 @@ namespace AEV7_David_Alberto.Clases
                 }
             }
         }
+
+        /// <summary>
+        /// Metodo público para abrir la conexión
+        /// </summary>
         public static void AbrirConexion()
         {
             if (instancia!=null)
@@ -39,6 +46,9 @@ namespace AEV7_David_Alberto.Clases
             }
         }
 
+        /// <summary>
+        /// Metodo público para cerrar la conexión
+        /// </summary>
         public static void CerrarConexion()
         {
             if (instancia!=null)
