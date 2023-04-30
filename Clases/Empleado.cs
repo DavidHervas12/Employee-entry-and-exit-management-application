@@ -139,6 +139,12 @@ namespace AEV7_David_Alberto.Clases
         }
 
         #region Validaciones
+
+        /// <summary>
+        /// Método para comprobar si el empleado con el dni especificado ya está en la base de datos.
+        /// </summary>
+        /// <param name="dni">DNI</param>
+        /// <returns>Devuelve false si el empleado está en la base de datos y true en el caso contrario</returns>
         public static bool ComprobarEmpleado(string dni)
         {
             string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
@@ -158,6 +164,11 @@ namespace AEV7_David_Alberto.Clases
             }
         }
 
+        /// <summary>
+        /// Método para comprobar si un empleado es administrador.
+        /// </summary>
+        /// <param name="dni">DNI del empleado.</param>
+        /// <returns>Devuelve true si el empleado es administrador y false en caso contrario.</returns>
         public static bool ComprobarAdministrador(MaskedTextBox dni)
         {
             string nif = dni.Text.Substring(0, 8) + dni.Text[9]; //NIF sin guiones
@@ -191,6 +202,11 @@ namespace AEV7_David_Alberto.Clases
             }
         }
 
+        /// <summary>
+        /// Método para comprobar si la clave introducida es correcta.
+        /// </summary>
+        /// <param name="clave">Clave de administrador.</param>
+        /// <returns>Devuelve true si la clave es correcta y flase en caso contrario</returns>
         public static bool ComprobarClave(TextBox clave)
         {
             string consulta = String.Format("SELECT * FROM empleados WHERE nif=@nif AND clave=@clave");
@@ -210,8 +226,12 @@ namespace AEV7_David_Alberto.Clases
                 return false;
             }
         }
-        
-        
+
+        /// <summary>
+        /// Método para validar el nif.
+        /// </summary>
+        /// <param name="dni">NIF</param>
+        /// <returns>Devuelve true si el nif es válido y false en el lado contrario.</returns>
         public static bool ValidaNif(TextBox dni)
         {
             string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
@@ -228,6 +248,11 @@ namespace AEV7_David_Alberto.Clases
             return false;
         }
 
+        /// <summary>
+        /// Método para validar el nif.
+        /// </summary>
+        /// <param name="dni">NIF</param>
+        /// <returns>Devuelve true si el nif es válido y false en el lado contrario.</returns>
         public static bool ValidaNif(MaskedTextBox dni)
         {
             string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
