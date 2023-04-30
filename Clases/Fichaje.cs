@@ -35,6 +35,11 @@ namespace AEV7_David_Alberto.Clases
         {
         }
 
+        /// <summary>
+        /// Metodo para agregar un fichaje de entrada
+        /// </summary>
+        /// <param name="fichaje">Instancia del fichaje que se quiere añadir en la base de datos</param>
+        /// <returns>Devuelve numero de filas que ha afectado</returns>
         public int DarEntrada(Fichaje fichaje)
         {
             int retorno;
@@ -54,6 +59,11 @@ namespace AEV7_David_Alberto.Clases
         }
 
 
+        /// <summary>
+        /// Metodo para agregar un fichaje de salida
+        /// </summary>
+        /// <param name="fich">Instancia del fichaje que se quiere añadir en la base de datos</param>
+        /// <returns>Devuelve numero de filas que ha afectado</returns>
         public int DarSalida(Fichaje fich)
         {
             int retorno;
@@ -68,6 +78,11 @@ namespace AEV7_David_Alberto.Clases
             return retorno;
         }
 
+        /// <summary>
+        /// Método para adquirir la lista de todos los fichajes que hay en la base de datos.
+        /// </summary>
+        /// <param name="consulta">Consulta SQL para obtener los fichajes</param>
+        /// <returns>La lista de todos los fichajes que hay en la tabla fichajes.</returns>
         public static List<Fichaje> VerFichajesTotales(string consulta)
         {
             List<Fichaje> totalFichajes = new List<Fichaje>();
@@ -88,6 +103,13 @@ namespace AEV7_David_Alberto.Clases
             return totalFichajes;
         }
 
+        /// <summary>
+        /// Método para adquirir la lista de todos los fichajes mediante dos fechas con la duración total de la permanencia.
+        /// </summary>
+        /// <param name="nif">NIF del empleado que se desea calcular</param>
+        /// <param name="fInicial">Fecha inicial</param>
+        /// <param name="fFinal">Fecha final</param>
+        /// <returns>Lista de usuarios calculados mediante dos fechas con la duración total</returns>
         public static List<Fichaje> ListaFechasFichajes(string nif, DateTime fInicial, DateTime fFinal)
         {
             List<Fichaje> lista = new List<Fichaje>();
@@ -120,6 +142,11 @@ namespace AEV7_David_Alberto.Clases
 
         #region Validaciones 
 
+        /// <summary>
+        /// Metodo para comprobar si se ha hecho la entrada del fichaje correctamente
+        /// </summary>
+        /// <param name="dni">DNI/NIF del fichaje que se desea buscar</param>
+        /// <returns>Devuelve true si hay filas afectadas o false si no hay filas</returns>
         public static bool ComprobarEntradaFichaje(MaskedTextBox dni)
         {
             string nif = dni.Text.Substring(0, 8) + dni.Text[9];
