@@ -21,11 +21,11 @@
       <FileName>Clases\ConexionBD.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AEV7_David_Alberto.FrmMantenimiento">
-    <Position X="10.75" Y="0.75" Width="2.5" />
+  <Class Name="AEV7_David_Alberto.Program">
+    <Position X="4.75" Y="4.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>CADTgAIAAGCRAAQCAACAABAmCCBAQAAgABACiAAAAAI=</HashCode>
-      <FileName>FrmMantenimiento.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
