@@ -37,10 +37,10 @@ namespace AEV7_David_Alberto
             }
         }
         /// <summary>
-        /// Muestra 
+        /// Método que carga los datos en el DataGridView de la lista de fichajes y calcula duración total de la permanencia
         /// </summary>
-        /// <param name="lista"></param>
-        /// <returns></returns>
+        /// <param name="lista">Lista de fichajes calculados mediante dos fechas</param>
+        /// <returns>Minutos de duración total de los fichajes</returns>
         private int CargaDataGrid(List<Fichaje> lista)
         {
             dgvInformacionFichajes.Rows.Clear();
@@ -55,11 +55,11 @@ namespace AEV7_David_Alberto
         }
 
         /// <summary>
-        /// Calcula la duración de la hora de entrada y salida
+        /// Calcula la duración de la hora de entrada y de salida
         /// </summary>
-        /// <param name="he"></param>
-        /// <param name="hs"></param>
-        /// <returns></returns>
+        /// <param name="he">Hora de entrada</param>
+        /// <param name="hs">Hora de salida</param>
+        /// <returns>Número de minutos</returns>
         private int CalculaDuracion(DateTime he, DateTime hs)
         {
             TimeSpan ht = hs.Subtract(he);
