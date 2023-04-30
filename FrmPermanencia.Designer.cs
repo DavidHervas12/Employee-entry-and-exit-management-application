@@ -224,7 +224,8 @@
             this.Controls.Add(this.dgvInformacionFichajes);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPermanencia";
-            this.Text = "FrmPermanencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Funcionalidad Permanencia";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionFichajes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvFichajes)).EndInit();
             this.ResumeLayout(false);

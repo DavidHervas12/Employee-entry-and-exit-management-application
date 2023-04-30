@@ -44,7 +44,7 @@ namespace AEV7_David_Alberto
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblNIF = new System.Windows.Forms.Label();
             this.lblGestionEmpleados = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.dgvFichajes = new System.Windows.Forms.DataGridView();
             this.lblInfoEmpleados = new System.Windows.Forms.Label();
@@ -209,18 +209,18 @@ namespace AEV7_David_Alberto
             this.lblGestionEmpleados.TabIndex = 0;
             this.lblGestionEmpleados.Text = "GESTIÓN DE EMPLEADOS";
             // 
-            // btnCerrar
+            // btnVolver
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnCerrar.Location = new System.Drawing.Point(718, 452);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(115, 45);
-            this.btnCerrar.TabIndex = 12;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnVolver.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnVolver.Location = new System.Drawing.Point(718, 452);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(115, 45);
+            this.btnVolver.TabIndex = 12;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // dgvEmpleados
             // 
@@ -228,7 +228,7 @@ namespace AEV7_David_Alberto
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.GridColor = System.Drawing.Color.MidnightBlue;
             this.dgvEmpleados.Location = new System.Drawing.Point(25, 55);
-            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 51;
             this.dgvEmpleados.RowTemplate.Height = 24;
@@ -241,7 +241,7 @@ namespace AEV7_David_Alberto
             this.dgvFichajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFichajes.GridColor = System.Drawing.Color.MidnightBlue;
             this.dgvFichajes.Location = new System.Drawing.Point(25, 316);
-            this.dgvFichajes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvFichajes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvFichajes.Name = "dgvFichajes";
             this.dgvFichajes.RowHeadersWidth = 51;
             this.dgvFichajes.RowTemplate.Height = 24;
@@ -281,12 +281,13 @@ namespace AEV7_David_Alberto
             this.pbSalir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
             this.pbSalir.Location = new System.Drawing.Point(940, 9);
-            this.pbSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbSalir.Margin = new System.Windows.Forms.Padding(2);
             this.pbSalir.Name = "pbSalir";
             this.pbSalir.Size = new System.Drawing.Size(30, 30);
             this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbSalir.TabIndex = 17;
             this.pbSalir.TabStop = false;
+            this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
             // 
             // FrmMantenimiento
             // 
@@ -299,9 +300,10 @@ namespace AEV7_David_Alberto
             this.Controls.Add(this.lblInfoEmpleados);
             this.Controls.Add(this.dgvFichajes);
             this.Controls.Add(this.dgvEmpleados);
-            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gpbGestionEmpleados);
             this.Name = "FrmMantenimiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionalidades de Mantenimiento (Perfil Administrador)";
             this.Load += new System.EventHandler(this.FrmMantenimiento_Load);
             this.gpbGestionEmpleados.ResumeLayout(false);
@@ -330,7 +332,7 @@ namespace AEV7_David_Alberto
         private System.Windows.Forms.Label lblContrasenya;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.DataGridView dgvFichajes;
         private System.Windows.Forms.Label lblInfoEmpleados;

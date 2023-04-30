@@ -25,12 +25,6 @@ namespace AEV7_David_Alberto
             CargaListaEmpleados(); //Cargamos la lista de empleados cuando abrimos el formulario
             CargaListaFichajes();
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             int resultado = 0;
@@ -116,8 +110,11 @@ namespace AEV7_David_Alberto
             {
                 ConexionBD.CerrarConexion();
             }
+        }
 
-
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion
         private void CargaListaEmpleados()
@@ -192,6 +189,11 @@ namespace AEV7_David_Alberto
         {
             txtContrasenya.Enabled = chkAdministrador.Checked;
             txtContrasenya.Text = "";
+        }
+
+        private void pbSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
