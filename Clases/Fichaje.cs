@@ -146,7 +146,7 @@ namespace AEV7_David_Alberto.Clases
         /// Metodo para comprobar si se ha hecho la entrada del fichaje correctamente
         /// </summary>
         /// <param name="dni">DNI/NIF del fichaje que se desea buscar</param>
-        /// <returns>Devuelve true si hay filas afectadas o false si no hay filas</returns>
+        /// <returns>Devuelve true si hay filas que han hecho entrada o false si no</returns>
         public static bool ComprobarEntradaFichaje(MaskedTextBox dni)
         {
             string nif = dni.Text.Substring(0, 8) + dni.Text[9];

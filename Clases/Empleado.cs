@@ -190,13 +190,13 @@ namespace AEV7_David_Alberto.Clases
                 }
                 else
                 {
-                    MessageBox.Show("Ese usuario no es administrador");
+                    MessageBox.Show("Este usuario no es administrador", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return esAdmin;
                 }
             }
             else
             {
-                MessageBox.Show("No hay ningún empleado con este dni");
+                MessageBox.Show("No hay ningún empleado con este dni", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 reader.Close();
                 return esAdmin; //Estara falso por lo tanto no recibirá nada
             }
