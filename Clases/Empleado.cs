@@ -37,7 +37,11 @@ namespace AEV7_David_Alberto.Clases
         {
         }
 
-        //Método para agregar empleados
+        /// <summary>
+        /// Método para agregar empleados.
+        /// </summary>
+        /// <param name="emp">Instancia del empleado que se quiere añadir a la base de datos.</param>
+        /// <returns>Devuelve el número de filas afectado.</returns>
         public int AgregarEmpleado(Empleado emp)
         {
             int retorno;
@@ -56,6 +60,11 @@ namespace AEV7_David_Alberto.Clases
             return retorno;
         }
 
+        /// <summary>
+        /// Método para obtener la lista de todos los empleados que hay en la base de datos.
+        /// </summary>
+        /// <param name="consulta">La consulta sql para obtener los empleados</param>
+        /// <returns>La lista de todos los empleados que hay en la tabla empleados.</returns>
         public static List<Empleado> VerEmpleadosTotales(string consulta)
         {
             List<Empleado> listaEmpleados = new List<Empleado>();
@@ -82,6 +91,11 @@ namespace AEV7_David_Alberto.Clases
             return listaEmpleados;
         }
 
+        /// <summary>
+        /// Método para obtener un empleado concreto de de la base de datos.
+        /// </summary>
+        /// <param name="dni">Dni del empleado que se desea buscar.</param>
+        /// <returns>El empleado con el que coincide el dni.</returns>
         public static Empleado BuscarEmpleado(string dni)
         {
             string consulta = string.Format("SELECT * FROM empleados WHERE nif=@nif");
@@ -108,6 +122,11 @@ namespace AEV7_David_Alberto.Clases
             }
         }
 
+        /// <summary>
+        /// Método para eliminar un empleado.
+        /// </summary>
+        /// <param name="nif">El dni del empleado que se desea eliminar.</param>
+        /// <returns>Devuelve el numero de filas afectadas.</returns>
         public static int EliminaEmpleado(TextBox nif)
         {
             int retorno;
