@@ -206,7 +206,7 @@ namespace AEV7_David_Alberto.Clases
         /// Método para comprobar si la clave introducida es correcta.
         /// </summary>
         /// <param name="clave">Clave de administrador.</param>
-        /// <returns>Devuelve true si la clave es correcta y flase en caso contrario</returns>
+        /// <returns>Devuelve true si la clave es correcta y false en caso contrario</returns>
         public static bool ComprobarClave(TextBox clave)
         {
             string consulta = String.Format("SELECT * FROM empleados WHERE nif=@nif AND clave=@clave");
