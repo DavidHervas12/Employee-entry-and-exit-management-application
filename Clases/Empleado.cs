@@ -231,7 +231,7 @@ namespace AEV7_David_Alberto.Clases
         /// Método para validar el nif.
         /// </summary>
         /// <param name="dni">NIF</param>
-        /// <returns>Devuelve true si el nif es válido y false en el lado contrario.</returns>
+        /// <returns>Devuelve true si el nif es válido y false en caso contrario.</returns>
         public static bool ValidaNif(TextBox dni)
         {
             string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
@@ -252,7 +252,7 @@ namespace AEV7_David_Alberto.Clases
         /// Método para validar el nif.
         /// </summary>
         /// <param name="dni">NIF</param>
-        /// <returns>Devuelve true si el nif es válido y false en el lado contrario.</returns>
+        /// <returns>Devuelve true si el nif es válido y false en caso contrario.</returns>
         public static bool ValidaNif(MaskedTextBox dni)
         {
             string letras = "TRWAGMYFPDXBNJZSQVHLCKE";

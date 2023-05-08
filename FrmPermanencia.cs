@@ -59,11 +59,11 @@ namespace AEV7_David_Alberto
         /// </summary>
         /// <param name="he">Hora de entrada</param>
         /// <param name="hs">Hora de salida</param>
-        /// <returns>Número de minutos</returns>
+        /// <returns>Total de minutos que ha pasado trabajando</returns>
         private int CalculaDuracion(DateTime he, DateTime hs)
         {
             TimeSpan ht = hs.Subtract(he);
-            return (ht.Hours * 60) + ht.Minutes;
+            return (ht.Days * 60 * 60) + (ht.Hours * 60) + ht.Minutes;
         }
 
         #region Validaciones

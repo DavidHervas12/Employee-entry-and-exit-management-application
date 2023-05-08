@@ -1,8 +1,6 @@
 ﻿using AEV7_David_Alberto.Clases;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Net;
 using System.Windows.Forms;
 
 namespace AEV7_David_Alberto
@@ -38,7 +36,7 @@ namespace AEV7_David_Alberto
         private void btnEntrada_Click(object sender, EventArgs e)
         {
             int resultado = 0;
-            
+
             if (ValidarNIFBlanco())
             {
                 try
@@ -267,7 +265,7 @@ namespace AEV7_David_Alberto
                 if (ConexionBD.Conexion != null)
                 {
                     ConexionBD.AbrirConexion();
-                    
+
                     frmPermanencia = new FrmPermanencia();
                     frmPermanencia.Show();
                     ConexionBD.CerrarConexion();
