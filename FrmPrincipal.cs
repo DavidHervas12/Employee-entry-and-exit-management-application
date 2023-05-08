@@ -215,8 +215,8 @@ namespace AEV7_David_Alberto
                         {
                             if (Empleado.ComprobarAdministrador(mtbDni))
                             {
-                                    frmClave = new FrmClave();
-                                    frmClave.Show();
+                                frmClave = new FrmClave();
+                                frmClave.Show();
                             }
                         }
                         else

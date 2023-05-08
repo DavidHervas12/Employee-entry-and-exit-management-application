@@ -39,7 +39,7 @@ namespace AEV7_David_Alberto.Clases
         /// Metodo para agregar un fichaje de entrada
         /// </summary>
         /// <param name="fichaje">Instancia del fichaje que se quiere añadir en la base de datos</param>
-        /// <returns>Devuelve numero de filas que ha afectado</returns>
+        /// <returns>Devuelve numero de filas afectadas</returns>
         public int DarEntrada(Fichaje fichaje)
         {
             int retorno;
@@ -63,7 +63,7 @@ namespace AEV7_David_Alberto.Clases
         /// Metodo para agregar un fichaje de salida
         /// </summary>
         /// <param name="fich">Instancia del fichaje que se quiere añadir en la base de datos</param>
-        /// <returns>Devuelve numero de filas que ha afectado</returns>
+        /// <returns>Devuelve numero de filas afectadas</returns>
         public int DarSalida(Fichaje fich)
         {
             int retorno;
@@ -146,7 +146,7 @@ namespace AEV7_David_Alberto.Clases
         /// Metodo para comprobar si se ha hecho la entrada del fichaje correctamente
         /// </summary>
         /// <param name="dni">DNI/NIF del fichaje que se desea buscar</param>
-        /// <returns>Devuelve true si hay filas que han hecho entrada o false si no</returns>
+        /// <returns>Devuelve true si hay filas que han hecho entrada o false si no hay</returns>
         public static bool ComprobarEntradaFichaje(MaskedTextBox dni)
         {
             string nif = dni.Text.Substring(0, 8) + dni.Text[9];
